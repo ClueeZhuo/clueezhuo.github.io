@@ -169,7 +169,7 @@ sns_share:
 sidebar:
     dropdown:
         Email Me:
-            link: "mail:clueezhuo@outlook.com"
+            link: "mailto:clueezhuo@outlook.com"
             icon: email
     homepage:
         use: true
@@ -239,16 +239,16 @@ analytics:
 
 # Leancloud Views
 leancloud:
-    enable: true
+    enable: false
     app_id: OlIO1mwmKH7UXGISCB2oF9uU-gzGzoHsz
     app_key: uO4mkbdoL9gIys5wIucXXReX
     av_core_mini: "https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"
 
 # Busuanzi 不蒜子 Views
 busuanzi:
-    enable: true
-    all_site_uv: true
-    post_pv: true
+    enable: false
+    all_site_uv: false
+    post_pv: false
     busuanzi_pure_mini_js: "https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"
 
 # Files Vendors

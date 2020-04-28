@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-27T09:15:14.835Z</updated>
+  <updated>2020-04-27T09:51:53.625Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,21 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>hello world</title>
-    <link href="http://yoursite.com/2020/04/27/hello-world/"/>
-    <id>http://yoursite.com/2020/04/27/hello-world/</id>
-    <published>2020-04-27T09:15:14.000Z</published>
-    <updated>2020-04-27T09:15:14.835Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>欢迎使用 Markdown在线编辑器 MdEditor</title>

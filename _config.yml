@@ -99,5 +99,7 @@ theme: material
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/clueezhuo/clueezhuo.github.io.git
+  repo: 
+    github: https://github.com/clueezhuo/clueezhuo.github.io.git
+    gitee: https://gitee.com/ClueeZhuo/ClueeZhuo.git
   branch: master

@@ -96,7 +96,9 @@ sysctl --system
 [root@master01 ~]# yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 [root@master01 ~]# yum -y install docker-ce
 ```
+
 安装docker-ce如果出现以下错
+
 ```shell
 [root@master01 ~]# yum -y install docker-ce
 CentOS-8 - Base - mirrors.aliyun.com                                                                               14 kB/s | 3.8 kB     00:00
@@ -115,14 +117,30 @@ Error:
   - package containerd.io-1.2.6-3.3.el7.x86_64 is excluded
 (try to add '--skip-broken' to skip uninstallable packages or '--nobest' to use not only best candidate packages)
 ```
+
 解决方法
+
 ```shell
 [root@master01 ~]# wget https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
 [root@master01 ~]# yum install containerd.io-1.2.6-3.3.el7.x86_64.rpm
 ```
+
+安装docker-ce如果出现以下错
+
+```shell
+ file /usr/share/man/man1/docker-volume.1.gz from install of docker-ce-cli-1:19.03.8-3.el7.x86_64 conflicts with file from package podman-manpages-1.4.2-5.module_el8.1.0+237+63e26edc.noarch
+ ```
+
+解决方法
+
+```shell
+yum  remove podman-manpages -y
+```
+
 然后再安装docker-ce即可成功
 
 添加aliyundocker仓库加速器
+
 ```shell
 sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'

@@ -159,8 +159,6 @@ EOF
 
 # 5 初始化k8s集群
 
-# kubeadm init
-
 ```shell
 kubeadm init --kubernetes-version=v1.18.2 \
 --image-repository registry.aliyuncs.com/google_containers \

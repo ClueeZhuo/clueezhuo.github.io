@@ -336,7 +336,7 @@ master01.paas.com   Ready    master   5m47s   v1.18.0
 官方部署dashboard的服务没使用nodeport，将yaml文件下载到本地，在service里添加nodeport
 
 ```shell
-[root@master01 ~]# wget  https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-rc7/aio/deploy/recommended.yaml
+[root@master01 ~]# wget https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.1/aio/deploy/recommended.yaml
 [root@master01 ~]# vim recommended.yaml
 kind: Service
 apiVersion: v1
@@ -385,7 +385,7 @@ kubernetes-dashboard        NodePort    10.10.132.66   <none>        443:30000/T
 ```
 
 我们通过浏览器来访问一下
-https://192.168.1.202:30000
+https://192.168.1.201:30000
 接上一步，看到了登录界面，需要我们配置输入token或kubeconfig，这里我们选择token，通过以下命令获取输出的token
 
 ```shell
@@ -407,8 +407,8 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 在kubernetes-dashboard.yaml所在路径下
 
 ```shell
-kubectl delete -f kubernetes-dashboard.yaml
-kubectl create -f kubernetes-dashboard.yaml
+kubectl delete -f recommended.yaml
+kubectl create -f recommended.yaml
 ```
 
 查看所有的pod运行状态

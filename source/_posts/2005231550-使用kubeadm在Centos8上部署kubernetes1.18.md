@@ -422,4 +422,3 @@ kubectl get pod --all-namespaces
 ```shell
 kubectl -n kube-system get service kubernetes-dashboard
 ```
-

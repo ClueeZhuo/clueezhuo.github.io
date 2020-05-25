@@ -403,6 +403,7 @@ kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | gre
 即可进入下图所示的主界面了
 
 重装Dashboard
+
 在kubernetes-dashboard.yaml所在路径下
 
 ```shell
@@ -411,7 +412,7 @@ kubectl create -f kubernetes-dashboard.yaml
 ```
 
 查看所有的pod运行状态
-'
+
 ```shell
 kubectl get pod --all-namespaces
 ```

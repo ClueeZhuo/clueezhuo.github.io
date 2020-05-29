@@ -101,5 +101,4 @@ deploy:
   type: git
   repo: 
     github: https://github.com/clueezhuo/clueezhuo.github.io.git
-    gitee: https://gitee.com/ClueeZhuo/ClueeZhuo.git
   branch: master

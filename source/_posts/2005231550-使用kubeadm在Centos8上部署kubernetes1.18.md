@@ -1,7 +1,10 @@
 ---
 title: 2005231550@使用kubeadm在Centos8上部署kubernetes1.18
 date: 2020-05-23 15:49:18
-tags: K8S
+categories:
+- K8S
+tags:
+- K8S
 ---
 # 1 系统准备
 

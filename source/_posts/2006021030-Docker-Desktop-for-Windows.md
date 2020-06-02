@@ -1,7 +1,11 @@
 ---
 title: 2006021030@Docker Desktop for Windows
 date: 2020-06-02 10:23:23
-tags: DOCKER K8S
+categories:
+- DOCKER
+tags:
+- DOCKER
+- K8S
 ---
 # Docker Desktop for Windows 开启 Kubernetes
 

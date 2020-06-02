@@ -1,7 +1,10 @@
 ---
 title: 2006021000@Docker安装SqlServer
 date: 2020-06-02 09:57:42
-tags: SQL SERVER
+categories:
+- MSSQL
+tags:
+- MSSQL
 ---
 # 下载镜像
 https://hub.docker.com/_/microsoft-mssql-server

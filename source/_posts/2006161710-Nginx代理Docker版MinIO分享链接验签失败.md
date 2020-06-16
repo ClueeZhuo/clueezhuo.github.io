@@ -8,10 +8,6 @@ tags:
   - DOCKER
 date: 2020-06-16 17:09:50
 ---
-upstream minio_svr  {
-    server      127.0.0.1:59001;
-}
-
 # 问题：Nginx代理Docker版MinIO查看分享链接提示延签失败
 
 `nginx minio The request signature we calculated does not match the signature`
@@ -19,6 +15,10 @@ upstream minio_svr  {
 # 解决：调整Nginx配置
 
 ```ini
+upstream minio_svr  {
+    server      127.0.0.1:59001;
+}
+
 server  {
     listen          80;
     server_name     dbsvr-minio.cluee.tech;

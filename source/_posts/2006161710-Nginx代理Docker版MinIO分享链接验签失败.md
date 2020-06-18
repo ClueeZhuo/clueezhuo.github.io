@@ -8,11 +8,11 @@ tags:
   - DOCKER
 date: 2020-06-16 17:09:50
 ---
-# 问题：Nginx代理Docker版MinIO查看分享链接提示延签失败
+## 问题：Nginx代理Docker版MinIO查看分享链接提示延签失败
 
 `nginx minio The request signature we calculated does not match the signature`
 
-# 解决：调整Nginx配置
+## 解决：调整Nginx配置
 
 ```ini
 upstream minio_svr  {

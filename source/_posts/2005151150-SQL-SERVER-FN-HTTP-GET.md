@@ -2,7 +2,7 @@
 title: 2005151150@SQL-SERVER-FN-HTTP-GET
 date: 2020-05-15 11:51:20
 categories:
-- MSSQL
+- SQL
 tags:
 - MSSQL
 ---

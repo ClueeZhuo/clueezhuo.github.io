@@ -2,7 +2,7 @@
 title: 2005151200@SQL SERVER-FN_HTTP_POST
 date: 2020-05-15 11:54:53
 categories:
-- MSSQL
+- SQL
 tags:
 - MSSQL
 ---

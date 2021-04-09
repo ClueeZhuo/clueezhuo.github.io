@@ -238,7 +238,7 @@
 
     
         <meta property="article:published_time" content="Fri Apr 09 2021 13:38:56 GMT+0800" />
-        <meta property="article:modified_time" content="Fri Apr 09 2021 13:43:41 GMT+0800" />
+        <meta property="article:modified_time" content="Fri Apr 09 2021 14:01:37 GMT+0800" />
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "https://loft.cluee.tech/2021/04/09/2104091338-CentOS7%E9%85%8D%E7%BD%AESupervisor%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/index.html",
     "headline": "2104091338@CentOS7配置Supervisor开机启动",
     "datePublished": "Fri Apr 09 2021 13:38:56 GMT+0800",
-    "dateModified": "Fri Apr 09 2021 13:43:41 GMT+0800",
+    "dateModified": "Fri Apr 09 2021 14:01:37 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "ClueeZhuo",
@@ -479,7 +479,7 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <h3 id="1-在自己桌面新建一个supervisord-service文件"><a href="#1-在自己桌面新建一个supervisord-service文件" class="headerlink" title="1. 在自己桌面新建一个supervisord.service文件"></a>1. 在自己桌面新建一个supervisord.service文件</h3><p>内容为: </p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Supervisor daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/bin/supervisord -c /etc/supervisor/supervisord.conf</span><br><span class="line">ExecStop=/usr/bin/supervisorctl shutdown</span><br><span class="line">ExecReload=/usr/bin/supervisorctl reload</span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=42s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Supervisor daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/bin/supervisord -c /etc/supervisor/supervisord.conf</span><br><span class="line">ExecStop=/usr/local/bin/supervisorctl shutdown</span><br><span class="line">ExecReload=/usr/local/bin/supervisorctl reload</span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=42s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-将此文件拷贝到-usr-lib-systemd-system文件夹下"><a href="#2-将此文件拷贝到-usr-lib-systemd-system文件夹下" class="headerlink" title="2. 将此文件拷贝到/usr/lib/systemd/system文件夹下"></a>2. 将此文件拷贝到/usr/lib/systemd/system文件夹下</h3><h3 id="3-执行命令"><a href="#3-执行命令" class="headerlink" title="3. 执行命令:"></a>3. 执行命令:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable supervisord</span><br></pre></td></tr></table></figure>
 

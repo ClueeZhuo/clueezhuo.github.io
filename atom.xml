@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2021-04-09T06:01:37.883Z</updated>
+  <updated>2021-05-20T09:16:10.486Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>21052017813@Oracle日期操作</title>
+    <link href="https://loft.cluee.tech/2021/05/20/21052017813-Oracle%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/"/>
+    <id>https://loft.cluee.tech/2021/05/20/21052017813-Oracle%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-05-20T09:14:22.000Z</published>
+    <updated>2021-05-20T09:16:10.486Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sysdate+1 加一天</span><br><span class="line">sysdate+1/24 加1小时</span><br><span class="line">sysdate+1/(24*60) 加1分钟</span><br><span class="line">sysdate+1/(24*60*60) 加1秒钟</span><br><span class="line">类推至毫秒0.001秒</span><br></pre></td></tr></table></figure><h2 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">12</span>) <span class="keyword">from</span> dual;        <span class="comment">--加1年 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">1</span>) <span class="keyword">from</span> dual;        <span class="comment">--加1月 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">7</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1星期 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1天 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1小时 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1分钟 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>/<span class="number">60</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1秒</span></span><br></pre></td></tr></table></figure><h2 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">-12</span>) <span class="keyword">from</span> dual;        <span class="comment">--减1年 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;        <span class="comment">--减1月 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-7</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1星期 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1天 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1小时 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1分钟 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>/<span class="number">60</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1秒</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="ORACLE" scheme="https://loft.cluee.tech/tags/ORACLE/"/>
+    
+  </entry>
   
   <entry>
     <title>2104091338@CentOS7配置Supervisor开机启动</title>
@@ -526,32 +552,6 @@
     
     
       <category term="NGROK" scheme="https://loft.cluee.tech/tags/NGROK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2005251820@CentOS8默认启动方式</title>
-    <link href="https://loft.cluee.tech/2020/05/25/2005251820-CentOS8%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F/"/>
-    <id>https://loft.cluee.tech/2020/05/25/2005251820-CentOS8%E9%BB%98%E8%AE%A4%E5%90%AF%E5%8A%A8%E6%96%B9%E5%BC%8F/</id>
-    <published>2020-05-25T10:18:31.000Z</published>
-    <updated>2021-04-09T05:26:15.388Z</updated>
-    
-    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@master201 ~]# vim /etc/inittab</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> inittab is no longer used.</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> </span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ADDING CONFIGURATION HERE WILL HAVE NO EFFECT ON YOUR SYSTEM.</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Ctrl-Alt-Delete is handled by /usr/lib/systemd/system/ctrl-alt-del.target</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemd uses <span class="string">'targets'</span> instead of runlevels. By default, there are two main targets:</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> multi-user.target: analogous to runlevel 3</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> graphical.target: analogous to runlevel 5</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> To view current default target, run:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl get-default</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> To <span class="built_in">set</span> a default target, run:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl <span class="built_in">set</span>-default TARGET.target</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> eg:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl <span class="built_in">set</span>-default multi-user.target</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> systemctl <span class="built_in">set</span>-default graphical.target</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
-    
-    
-      <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

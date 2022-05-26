@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>LOFT.CLUEE.TECH</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://loft.cluee.tech/"/>
+  <updated>2022-05-26T03:11:28.727Z</updated>
+  <id>https://loft.cluee.tech/</id>
+  
+  <author>
+    <name>ClueeZhuo</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>220526@DDD</title>
+    <link href="https://loft.cluee.tech/2022/05/26/220526-DDD/"/>
+    <id>https://loft.cluee.tech/2022/05/26/220526-DDD/</id>
+    <published>2022-05-26T03:09:53.000Z</published>
+    <updated>2022-05-26T03:11:28.727Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/220526/220526101-DDD.png" alt="220526101" title="220526101"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://dbsvr-minio.cluee.tech/loft.cluee.tech/220526/220526101-DDD.png&quot; alt=&quot;220526101&quot; title=&quot;220526101&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="架构设计" scheme="https://loft.cluee.tech/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="DDD" scheme="https://loft.cluee.tech/tags/DDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2107261433@ODAC</title>
+    <link href="https://loft.cluee.tech/2021/07/26/2107261433-ODAC/"/>
+    <id>https://loft.cluee.tech/2021/07/26/2107261433-ODAC/</id>
+    <published>2021-07-26T06:33:18.000Z</published>
+    <updated>2022-05-26T02:50:13.098Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="ORACLE数据访问组件ODAC"><a href="#ORACLE数据访问组件ODAC" class="headerlink" title="ORACLE数据访问组件ODAC"></a>ORACLE数据访问组件ODAC</h2><h3 id="1、安装ODAC包"><a href="#1、安装ODAC包" class="headerlink" title="1、安装ODAC包"></a>1、安装ODAC包</h3><p>install.bat all D:\OracleClient ODAC</p><h3 id="2、设置环境变量"><a href="#2、设置环境变量" class="headerlink" title="2、设置环境变量"></a>2、设置环境变量</h3><p>ORACLE_HOME=D:\OracleClient<br>PATH=%ORACLE_HOME%;%ORACLE_HOME%\bin;</p><h3 id="3、根据需要配置tnsnames-ora文件"><a href="#3、根据需要配置tnsnames-ora文件" class="headerlink" title="3、根据需要配置tnsnames.ora文件"></a>3、根据需要配置tnsnames.ora文件</h3><p>%ORACLE_HOME%\network\admin目录下tnsnames.ora<br>ORA =<br>  (DESCRIPTION =<br>    (ADDRESS_LIST =<br>      (ADDRESS = (PROTOCOL = TCP)(HOST = 127.0.0.1)(PORT = 1521))<br>    )<br>    (CONNECT_DATA =<br>      (SERVICE_NAME = ORA)<br>    )<br>  )</p><h3 id="4、卸载ODAC的方法"><a href="#4、卸载ODAC的方法" class="headerlink" title="4、卸载ODAC的方法"></a>4、卸载ODAC的方法</h3><p>uninstall.bat all ODAC</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;ORACLE数据访问组件ODAC&quot;&gt;&lt;a href=&quot;#ORACLE数据访问组件ODAC&quot; class=&quot;headerlink&quot; title=&quot;ORACLE数据访问组件ODAC&quot;&gt;&lt;/a&gt;ORACLE数据访问组件ODAC&lt;/h2&gt;&lt;h3 id=&quot;1、安装ODAC包
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="ORACLE" scheme="https://loft.cluee.tech/tags/ORACLE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>21052017813@Oracle日期操作</title>
+    <link href="https://loft.cluee.tech/2021/05/20/2105201781-Oracle%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/"/>
+    <id>https://loft.cluee.tech/2021/05/20/2105201781-Oracle%E6%97%A5%E6%9C%9F%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-05-20T09:14:22.000Z</published>
+    <updated>2022-05-26T02:50:13.098Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sysdate+1 加一天</span><br><span class="line">sysdate+1/24 加1小时</span><br><span class="line">sysdate+1/(24*60) 加1分钟</span><br><span class="line">sysdate+1/(24*60*60) 加1秒钟</span><br><span class="line">类推至毫秒0.001秒</span><br></pre></td></tr></table></figure><h2 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">12</span>) <span class="keyword">from</span> dual;        <span class="comment">--加1年 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">1</span>) <span class="keyword">from</span> dual;        <span class="comment">--加1月 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">7</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1星期 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1天 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1小时 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1分钟 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span>+<span class="number">1</span>/<span class="number">24</span>/<span class="number">60</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--加1秒</span></span><br></pre></td></tr></table></figure><h2 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">-12</span>) <span class="keyword">from</span> dual;        <span class="comment">--减1年 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,add_months(<span class="keyword">sysdate</span>,<span class="number">-1</span>) <span class="keyword">from</span> dual;        <span class="comment">--减1月 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-7</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1星期 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1天 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1小时 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1分钟 </span></span><br><span class="line"><span class="keyword">select</span> <span class="keyword">sysdate</span>,to_char(<span class="keyword">sysdate</span><span class="number">-1</span>/<span class="number">24</span>/<span class="number">60</span>/<span class="number">60</span>,<span class="string">'yyyy-mm-dd HH24:MI:SS'</span>) <span class="keyword">from</span> dual;  <span class="comment">--减1秒</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="ORACLE" scheme="https://loft.cluee.tech/tags/ORACLE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2104091338@CentOS7配置Supervisor开机启动</title>
+    <link href="https://loft.cluee.tech/2021/04/09/2104091338-CentOS7%E9%85%8D%E7%BD%AESupervisor%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/"/>
+    <id>https://loft.cluee.tech/2021/04/09/2104091338-CentOS7%E9%85%8D%E7%BD%AESupervisor%E5%BC%80%E6%9C%BA%E5%90%AF%E5%8A%A8/</id>
+    <published>2021-04-09T05:38:56.000Z</published>
+    <updated>2022-05-26T02:50:13.098Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-在自己桌面新建一个supervisord-service文件"><a href="#1-在自己桌面新建一个supervisord-service文件" class="headerlink" title="1. 在自己桌面新建一个supervisord.service文件"></a>1. 在自己桌面新建一个supervisord.service文件</h3><p>内容为: </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Supervisor daemon</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/bin/supervisord -c /etc/supervisor/supervisord.conf</span><br><span class="line">ExecStop=/usr/local/bin/supervisorctl shutdown</span><br><span class="line">ExecReload=/usr/local/bin/supervisorctl reload</span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">RestartSec=42s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><h3 id="2-将此文件拷贝到-usr-lib-systemd-system文件夹下"><a href="#2-将此文件拷贝到-usr-lib-systemd-system文件夹下" class="headerlink" title="2. 将此文件拷贝到/usr/lib/systemd/system文件夹下"></a>2. 将此文件拷贝到/usr/lib/systemd/system文件夹下</h3><h3 id="3-执行命令"><a href="#3-执行命令" class="headerlink" title="3. 执行命令:"></a>3. 执行命令:</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable supervisord</span><br></pre></td></tr></table></figure><h3 id="4-执行命令测试是否为开机启动"><a href="#4-执行命令测试是否为开机启动" class="headerlink" title="4. 执行命令测试是否为开机启动"></a>4. 执行命令测试是否为开机启动</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl is-enabled supervisord</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-在自己桌面新建一个supervisord-service文件&quot;&gt;&lt;a href=&quot;#1-在自己桌面新建一个supervisord-service文件&quot; class=&quot;headerlink&quot; title=&quot;1. 在自己桌面新建一个supervisord.serv
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
+    
+    
+      <category term="Supervisor" scheme="https://loft.cluee.tech/tags/Supervisor/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2101261710@nginx_failed_error:during_websocket_handshake</title>
+    <link href="https://loft.cluee.tech/2021/01/26/2101261710-nginx-failed-error-during-websocket-handshake/"/>
+    <id>https://loft.cluee.tech/2021/01/26/2101261710-nginx-failed-error-during-websocket-handshake/</id>
+    <published>2021-01-26T09:14:31.000Z</published>
+    <updated>2022-05-26T02:50:13.097Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="报错nginx-failed-error-during-websocket-handshake"><a href="#报错nginx-failed-error-during-websocket-handshake" class="headerlink" title="报错nginx failed error: during websocket handshake"></a>报错nginx failed error: during websocket handshake</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location / &#123;</span><br><span class="line">proxy_pass http://xxx_svr;</span><br><span class="line">proxy_http_version 1.1;</span><br><span class="line">proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">proxy_set_header Connection "upgrade";</span><br><span class="line">proxy_set_header Host $host;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;报错nginx-failed-error-during-websocket-handshake&quot;&gt;&lt;a href=&quot;#报错nginx-failed-error-during-websocket-handshake&quot; class=&quot;headerlink&quot; title
+      
+    
+    </summary>
+    
+    
+      <category term="NGINX" scheme="https://loft.cluee.tech/categories/NGINX/"/>
+    
+    
+      <category term="WEBSOCKET" scheme="https://loft.cluee.tech/tags/WEBSOCKET/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2101201415@RSA</title>
+    <link href="https://loft.cluee.tech/2021/01/20/2101201415-RSA/"/>
+    <id>https://loft.cluee.tech/2021/01/20/2101201415-RSA/</id>
+    <published>2021-01-20T06:15:29.000Z</published>
+    <updated>2022-05-26T02:50:13.097Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="私钥签名，公钥验签"><a href="#私钥签名，公钥验签" class="headerlink" title="私钥签名，公钥验签"></a>私钥签名，公钥验签</h2><h2 id="公钥加密，私钥解密"><a href="#公钥加密，私钥解密" class="headerlink" title="公钥加密，私钥解密"></a>公钥加密，私钥解密</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;私钥签名，公钥验签&quot;&gt;&lt;a href=&quot;#私钥签名，公钥验签&quot; class=&quot;headerlink&quot; title=&quot;私钥签名，公钥验签&quot;&gt;&lt;/a&gt;私钥签名，公钥验签&lt;/h2&gt;&lt;h2 id=&quot;公钥加密，私钥解密&quot;&gt;&lt;a href=&quot;#公钥加密，私钥解密&quot; class
+      
+    
+    </summary>
+    
+    
+      <category term="SECURITY" scheme="https://loft.cluee.tech/categories/SECURITY/"/>
+    
+    
+      <category term="RSA" scheme="https://loft.cluee.tech/tags/RSA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2101081010@VisualSVN-V6.1插件解除限定</title>
+    <link href="https://loft.cluee.tech/2021/01/08/2101081010-VisualSVN-V6-1%E6%8F%92%E4%BB%B6%E8%A7%A3%E9%99%A4%E9%99%90%E5%AE%9A/"/>
+    <id>https://loft.cluee.tech/2021/01/08/2101081010-VisualSVN-V6-1%E6%8F%92%E4%BB%B6%E8%A7%A3%E9%99%A4%E9%99%90%E5%AE%9A/</id>
+    <published>2021-01-08T02:15:56.000Z</published>
+    <updated>2022-05-26T02:50:13.097Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-备份当前VisualSVN安装目录文件bin里面的VisualSVN-Core-L-dll文件"><a href="#1-备份当前VisualSVN安装目录文件bin里面的VisualSVN-Core-L-dll文件" class="headerlink" title="1.备份当前VisualSVN安装目录文件bin里面的VisualSVN.Core.L.dll文件"></a>1.备份当前VisualSVN安装目录文件bin里面的VisualSVN.Core.L.dll文件</h2><p>打开C:\Users{USERNAME}\AppData\Local\Microsoft\VisualStudio{VERSIOIN}\Extensions{XXX}，然后搜索“VisualSVN.Core.L.dll”</p><h2 id="2-管理员权限打开VS命令提示工具，进行反编译输出"><a href="#2-管理员权限打开VS命令提示工具，进行反编译输出" class="headerlink" title="2.管理员权限打开VS命令提示工具，进行反编译输出"></a>2.管理员权限打开VS命令提示工具，进行反编译输出</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ildasm "D:\VisualSVN.Core.L.dll" /out="D:\VisualSVN.Core.L.il"</span><br></pre></td></tr></table></figure><h2 id="3-用记事本打开-VisualSVN-Core-L-il-文件，搜索-“KeyToLicenseUnsafe”，找到KeyToLicenseUnsafe方法，大概在1038行附近。替换为下面的代码，然后保存："><a href="#3-用记事本打开-VisualSVN-Core-L-il-文件，搜索-“KeyToLicenseUnsafe”，找到KeyToLicenseUnsafe方法，大概在1038行附近。替换为下面的代码，然后保存：" class="headerlink" title="3.用记事本打开 VisualSVN.Core.L.il 文件，搜索 “KeyToLicenseUnsafe”，找到KeyToLicenseUnsafe方法，大概在1038行附近。替换为下面的代码，然后保存："></a>3.用记事本打开 VisualSVN.Core.L.il 文件，搜索 “KeyToLicenseUnsafe”，找到KeyToLicenseUnsafe方法，大概在1038行附近。替换为下面的代码，然后保存：</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">.method public hidebysig static class VisualSVN.Core.Licensing.License</span><br><span class="line">        KeyToLicenseUnsafe(class VisualSVN.Core.IDecoder decoder,</span><br><span class="line">                           string key) cil managed</span><br><span class="line">&#123;</span><br><span class="line">  // 代码大小       69 (0x45)</span><br><span class="line">  .locals init (class VisualSVN.Core.Licensing.License V_0, class VisualSVN.Core.Licensing.License V_1, class VisualSVN.Core.Licensing.License V_2)</span><br><span class="line">  IL_0000: nop</span><br><span class="line">  IL_0001: newobj instance void VisualSVN.Core.Licensing.License::.ctor()</span><br><span class="line">  IL_0006: stloc.1</span><br><span class="line">  IL_0007: ldloc.1</span><br><span class="line">  IL_0008: ldsfld valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::MinValue</span><br><span class="line">  IL_000d: stfld valuetype [mscorlib]System.DateTime VisualSVN.Core.Licensing.License::StartTime</span><br><span class="line">  IL_0012: ldloc.1</span><br><span class="line">  IL_0013: ldc.i4.1</span><br><span class="line">  IL_0014: stfld valuetype VisualSVN.Core.Licensing.LicenseBinding VisualSVN.Core.Licensing.License::Binding</span><br><span class="line">  IL_0019: ldloc.1</span><br><span class="line">  IL_001a: ldc.i4 0x7ffffffe</span><br><span class="line">  IL_001f: stfld int32 VisualSVN.Core.Licensing.License::Capacity</span><br><span class="line">  IL_0024: ldloc.1</span><br><span class="line">  IL_0025: ldsfld valuetype [mscorlib]System.DateTime [mscorlib]System.DateTime::MaxValue</span><br><span class="line">  IL_002a: stfld valuetype [mscorlib]System.DateTime VisualSVN.Core.Licensing.License::EndTime</span><br><span class="line">  IL_002f: ldloc.1</span><br><span class="line">  IL_0030: ldc.i4.2</span><br><span class="line">  IL_0031: stfld valuetype VisualSVN.Core.Licensing.LicenseType VisualSVN.Core.Licensing.License::Type</span><br><span class="line">  IL_0036: ldloc.1</span><br><span class="line">  IL_0037: ldstr "100"</span><br><span class="line">  IL_003c: stfld string VisualSVN.Core.Licensing.License::PurchaseId</span><br><span class="line">  IL_0041: ldloc.1</span><br><span class="line">  IL_0042: call string [mscorlib]System.Environment::get_UserName()</span><br><span class="line">  IL_0047: stfld string VisualSVN.Core.Licensing.License::LicensedTo</span><br><span class="line">  IL_004c: ldloc.1</span><br><span class="line">  IL_004d: stloc.0</span><br><span class="line">  IL_004e: ldloc.0</span><br><span class="line">  IL_004f: ldloc.0</span><br><span class="line">  IL_0050: ldfld valuetype [mscorlib]System.DateTime VisualSVN.Core.Licensing.License::StartTime</span><br><span class="line">  IL_0055: stfld valuetype [mscorlib]System.DateTime VisualSVN.Core.Licensing.License::PurchaseDate</span><br><span class="line">  IL_005a: ldloc.0</span><br><span class="line">  IL_005b: stloc.2</span><br><span class="line">  IL_005c: br.s</span><br><span class="line">  IL_005e</span><br><span class="line">  IL_005e:ldloc.2</span><br><span class="line">  IL_005f: ret</span><br><span class="line">&#125; // end of method LicenseConverter::KeyToLicenseUnsafe</span><br></pre></td></tr></table></figure><h2 id="4-运行下面的代码-看到successfully表示成功了。覆盖到安装目录中"><a href="#4-运行下面的代码-看到successfully表示成功了。覆盖到安装目录中" class="headerlink" title="4. 运行下面的代码,看到successfully表示成功了。覆盖到安装目录中"></a>4. 运行下面的代码,看到successfully表示成功了。覆盖到安装目录中</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ilasm "D:\VisualSVN.Core.L.il" /output="D:\BAK\VisualSVN.Core.L.dll" /dll</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-备份当前VisualSVN安装目录文件bin里面的VisualSVN-Core-L-dll文件&quot;&gt;&lt;a href=&quot;#1-备份当前VisualSVN安装目录文件bin里面的VisualSVN-Core-L-dll文件&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+      <category term="KEYGEN" scheme="https://loft.cluee.tech/categories/KEYGEN/"/>
+    
+    
+      <category term="VisualSVN" scheme="https://loft.cluee.tech/tags/VisualSVN/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2101061715@CSharpProcess类详解</title>
+    <link href="https://loft.cluee.tech/2021/01/06/2101061715-CSharpProcess%E7%B1%BB%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://loft.cluee.tech/2021/01/06/2101061715-CSharpProcess%E7%B1%BB%E8%AF%A6%E8%A7%A3/</id>
+    <published>2021-01-06T09:18:57.000Z</published>
+    <updated>2022-05-26T02:50:13.097Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://blog.csdn.net/kang_xuan/article/details/91410974" target="_blank" rel="noopener" title="C# Process类详解">C# Process类详解</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/kang_xuan/article/details/91410974&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; title=&quot;C# Process类详解&quot;&gt;C# Process类详解&lt;/a&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="NET" scheme="https://loft.cluee.tech/categories/NET/"/>
+    
+    
+      <category term="C#" scheme="https://loft.cluee.tech/tags/C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2101061630@MySql字符集与排序规则详解</title>
+    <link href="https://loft.cluee.tech/2021/01/06/2101061630-MySql%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/"/>
+    <id>https://loft.cluee.tech/2021/01/06/2101061630-MySql%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%8E%E6%8E%92%E5%BA%8F%E8%A7%84%E5%88%99%E8%AF%A6%E8%A7%A3/</id>
+    <published>2021-01-06T08:34:09.000Z</published>
+    <updated>2022-05-26T02:50:13.096Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="字符集"><a href="#字符集" class="headerlink" title="字符集"></a>字符集</h2><p>先说字符，字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、字母、数字等，比如“啊、a、1、+、！、&amp;”等均表示一个字符。在UTF8编码中，一个字母、数字、符号占一个字节，中文占三个字节，emoji表情和一些比较复杂的文字、繁体字则占四个字节。其中一个字节由8个位组成，位为数据存储的最小单位，每个二进制数字0或者1就是1个位。</p><p>换算公式：1byte(字节) = 8bit(位)，1KB(千字节) = 1024byte(字节)，1MB(兆) = 1024KB(千字节)。</p><p>字符集是一套符号和编码，是多个字符的集合。常见的字符集有UTF8、Unicode、GBK、GB2312、ASCCI。在MySQL中常用的字符集有UTF8和UTF8MB4这两种，一般而言我们选择UTF8MB4，而不选择UTF8，因为MySQL中的UTF8并不是真正的UTF8字符集，它只支持三个字节，emoji表情和复杂的文字无法存储，并不能代表全部的UTF8，在5.5.3版本后新增的支持四个字节的UTF8MB4才是真正的UTF8编码，为了更好的兼容性，推荐使用UTF8MB4字符集。</p><p>此外，对于CHAR类型数据，UTF8MB4会多消耗一些空间，比如CHAR(10)，UTF8会保留30字节长度，UTF8MB4会保留40字节长度，根据MySQL官方建议，使用VARCHAR替代CHAR。同时UTF8MB4也是UTF8的超集，所以UTF8可以直接切换至UTF8MB4。</p><h2 id="排序规则"><a href="#排序规则" class="headerlink" title="排序规则"></a>排序规则</h2><p>排序规则，就是指字符比较时按照字符编码还是直接用二进制数据比较，以及是否区分大小写。UTF8MB4常用的排序规则有utf8mb4_unicode_ci、utf8mb4_general_ci、utf8mb4_bin。</p><p>其中，以bin结尾的是以二进制存储的，区分大小写，以cs结尾的是区分大小写的，以ci结尾的不区分大小写。</p><p>utf8mb4_unicode_ci是基于标准Unicode来排序和比较，能够在各种语言之间精确排序。且在特殊情况下，Unicode排序规则为了能够处理特殊字符的情况，实现了略微复杂的排序算法。但是在绝大多数情况下不会发生此类复杂比较。</p><p>utf8mb4_general_ci没有实现Unicode排序规则，在遇到某些特殊字符情况下，排序结果可能不一致。但是，在绝大多数情况下，这些特殊字符的顺序并不需要那么精确。</p><p>utf8mb4_bin将字符串的每个字符用二进制数据编译存储，区分大小写，可以存二进制的内容。</p><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>综合来说，utf8mb4_unicode_ci比较准确，utf8mb4_general_ci速度较快。utf8mb4_unicode_ci对于特殊字符的处理，在中文、英文应用中不会使用到，除非你的应用有德语、法语、俄语等，则需要使用utf8mb4_unicode_ci，否则一般选用utf8mb4_general_ci就可以了。</p><p><a href="https://www.cnblogs.com/ycyw/p/14134438.html" target="_blank" rel="noopener" title="COPYRIGHT">COPYRIGHT</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;字符集&quot;&gt;&lt;a href=&quot;#字符集&quot; class=&quot;headerlink&quot; title=&quot;字符集&quot;&gt;&lt;/a&gt;字符集&lt;/h2&gt;&lt;p&gt;先说字符，字符是各种文字和符号的总称，包括各国家文字、标点符号、图形符号、字母、数字等，比如“啊、a、1、+、！、&amp;amp;”等均表
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="MySql" scheme="https://loft.cluee.tech/tags/MySql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2008051430@备份及更新 Portainer</title>
+    <link href="https://loft.cluee.tech/2020/08/05/2008051430-%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%9B%B4%E6%96%B0-Portainer/"/>
+    <id>https://loft.cluee.tech/2020/08/05/2008051430-%E5%A4%87%E4%BB%BD%E5%8F%8A%E6%9B%B4%E6%96%B0-Portainer/</id>
+    <published>2020-08-05T06:28:54.000Z</published>
+    <updated>2022-05-26T02:50:13.096Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>到 Portainer 的容器列表里面查看 portainer 的 volume 对应的服务器目录，在 /var/lib/docker/volumes 下可找到 volume 对应的目录名，将其备份即可。</p><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><h3 id="1-停止并删除原容器"><a href="#1-停止并删除原容器" class="headerlink" title="1 停止并删除原容器"></a>1 停止并删除原容器</h3><ul><li>停止</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker stop portainer</span><br></pre></td></tr></table></figure><ul><li>删除</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rm portainer</span><br></pre></td></tr></table></figure><h3 id="2-删除原镜像"><a href="#2-删除原镜像" class="headerlink" title="2 删除原镜像"></a>2 删除原镜像</h3><ul><li>删除</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker rmi portainer/portainer-ce</span><br></pre></td></tr></table></figure><h3 id="3-拉取新镜像"><a href="#3-拉取新镜像" class="headerlink" title="3 拉取新镜像"></a>3 拉取新镜像</h3><ul><li>拉取</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull portainer/portainer-ce:latest</span><br></pre></td></tr></table></figure><h3 id="4-启动新容器"><a href="#4-启动新容器" class="headerlink" title="4 启动新容器"></a>4 启动新容器</h3><ul><li>命令</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 59000:9000 --name portainer --restart unless-stopped -v /var/run/docker.sock:/var/run/docker.sock   -v portainer_data:/data   portainer/portainer-ce</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;备份&quot;&gt;&lt;a href=&quot;#备份&quot; class=&quot;headerlink&quot; title=&quot;备份&quot;&gt;&lt;/a&gt;备份&lt;/h2&gt;&lt;p&gt;到 Portainer 的容器列表里面查看 portainer 的 volume 对应的服务器目录，在 /var/lib/docker/vo
+      
+    
+    </summary>
+    
+    
+      <category term="DOCKER" scheme="https://loft.cluee.tech/categories/DOCKER/"/>
+    
+    
+      <category term="Portainer" scheme="https://loft.cluee.tech/tags/Portainer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2007072030@新基建深度报告</title>
+    <link href="https://loft.cluee.tech/2020/07/07/2007072030-%E6%96%B0%E5%9F%BA%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%8A%A5%E5%91%8A/"/>
+    <id>https://loft.cluee.tech/2020/07/07/2007072030-%E6%96%B0%E5%9F%BA%E5%BB%BA%E6%B7%B1%E5%BA%A6%E6%8A%A5%E5%91%8A/</id>
+    <published>2020-07-07T12:32:47.000Z</published>
+    <updated>2022-05-26T02:50:13.096Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="工业互联网"><a href="#工业互联网" class="headerlink" title="工业互联网"></a>工业互联网</h2><ul><li><p>用友网络</p></li><li><p>宝信软件</p></li><li><p>能科股份</p></li></ul><h2 id="超高清视频"><a href="#超高清视频" class="headerlink" title="超高清视频"></a>超高清视频</h2><ul><li><p>当虹科技</p></li><li><p>数码科技</p></li></ul><h2 id="云计算"><a href="#云计算" class="headerlink" title="云计算"></a>云计算</h2><ul><li><p>用友网络</p></li><li><p>广联达</p></li><li><p>石基信息</p></li><li><p>金山办公</p></li><li><p>浪潮信息</p></li></ul><h2 id="云基础设施"><a href="#云基础设施" class="headerlink" title="云基础设施"></a>云基础设施</h2><ul><li><p>浪潮信息</p></li><li><p>宝信软件</p></li><li><p>深信服</p></li><li><p>中科曙光</p></li></ul><h2 id="半导体"><a href="#半导体" class="headerlink" title="半导体"></a>半导体</h2><ul><li><p>中微公司</p></li><li><p>北方华创</p></li></ul><h2 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h2><ul><li>中国软件</li></ul><h2 id="新基建十大核心行业龙头企业"><a href="#新基建十大核心行业龙头企业" class="headerlink" title="新基建十大核心行业龙头企业"></a>新基建十大核心行业龙头企业</h2><ol><li><p>中兴通讯：受益于 5G 基站建设的通信设备龙头；</p></li><li><p>海康威视：受益于 5G 安防场景应用发展的 AI+安防龙头；</p></li><li><p>金山办公：受益于云计算行业景气度上行的云化办公软件龙头；</p></li><li><p>中微公司：受益于中国芯片产能扩张的本土半导体刻蚀设备领军企业；</p></li><li><p>北方华创：受益于中国芯片产能扩张的半导体设备平台型龙头企业；</p></li><li><p>浪潮信息：受益于云计算底层计算需求扩张的服务器龙头厂商；</p></li><li><p>数据港：受益于云计算底层需求扩张的领军 IDC 服务商；</p></li><li><p>中国软件：受益于国产化浪潮的国产基础软件龙头；</p></li><li><p>宁德时代：全球领先动力电池系统提供商，车联网及新能源车产业链受益标的；</p></li><li><p>宝信软件：受益于工业互联网应用落地的钢铁信息化龙头，IDC 业务具有成本优势。</p></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;工业互联网&quot;&gt;&lt;a href=&quot;#工业互联网&quot; class=&quot;headerlink&quot; title=&quot;工业互联网&quot;&gt;&lt;/a&gt;工业互联网&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;用友网络&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;宝信软件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;能科股份&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="生存之道" scheme="https://loft.cluee.tech/categories/%E7%94%9F%E5%AD%98%E4%B9%8B%E9%81%93/"/>
+    
+    
+      <category term="股道" scheme="https://loft.cluee.tech/tags/%E8%82%A1%E9%81%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006181010@如何将bat部署到windows服务</title>
+    <link href="https://loft.cluee.tech/2020/06/18/2006181010-%E5%A6%82%E4%BD%95%E5%B0%86bat%E9%83%A8%E7%BD%B2%E5%88%B0windows%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://loft.cluee.tech/2020/06/18/2006181010-%E5%A6%82%E4%BD%95%E5%B0%86bat%E9%83%A8%E7%BD%B2%E5%88%B0windows%E6%9C%8D%E5%8A%A1/</id>
+    <published>2020-06-18T02:14:27.000Z</published>
+    <updated>2022-05-26T02:50:13.095Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-先下载-nssm-软件"><a href="#1-先下载-nssm-软件" class="headerlink" title="1 先下载 nssm 软件"></a>1 先下载 nssm 软件</h2><p>下载下来之后是一个压缩包解压找到对应你自己系统的32/64位nssm（在cmd窗口中找到该路径下的nssm）执行 nssm install  &lt;服务名&gt;   例如： </p><p><code>nssm install client.ngrok.cluee.tech</code></p><p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/200618/200618101-nssm_install_client.ngrok.cluee.tech.jpg" alt="200618101" title="200618101"></p><h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2 配置"></a>2 配置</h2><p>然后回车出现nssm的配置界面 在界面中填写你的 项目中的bat文件地址，例如:</p><p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/200618/200618102-nssm_service_install.jpg" alt="200618102" title="200618102"></p><p>点击 install service ，就建立成功了</p><h2 id="3-启动服务"><a href="#3-启动服务" class="headerlink" title="3 启动服务"></a>3 启动服务</h2><p>然后在计算机服务中就可以看到刚刚建立的server了，右键点击启动，就可以启动该服务了</p><p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/200618/200618103-client.ngrok.cluee.tech.jpg" alt="200618103" title="200618103"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;1-先下载-nssm-软件&quot;&gt;&lt;a href=&quot;#1-先下载-nssm-软件&quot; class=&quot;headerlink&quot; title=&quot;1 先下载 nssm 软件&quot;&gt;&lt;/a&gt;1 先下载 nssm 软件&lt;/h2&gt;&lt;p&gt;下载下来之后是一个压缩包解压找到对应你自己系统的32
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://loft.cluee.tech/categories/Windows/"/>
+    
+    
+      <category term="bat" scheme="https://loft.cluee.tech/tags/bat/"/>
+    
+      <category term="Windows Service" scheme="https://loft.cluee.tech/tags/Windows-Service/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006161710@Nginx代理Docker版MinIO分享链接验签失败</title>
+    <link href="https://loft.cluee.tech/2020/06/16/2006161710-Nginx%E4%BB%A3%E7%90%86Docker%E7%89%88MinIO%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E9%AA%8C%E7%AD%BE%E5%A4%B1%E8%B4%A5/"/>
+    <id>https://loft.cluee.tech/2020/06/16/2006161710-Nginx%E4%BB%A3%E7%90%86Docker%E7%89%88MinIO%E5%88%86%E4%BA%AB%E9%93%BE%E6%8E%A5%E9%AA%8C%E7%AD%BE%E5%A4%B1%E8%B4%A5/</id>
+    <published>2020-06-16T09:09:50.000Z</published>
+    <updated>2022-05-26T02:50:13.095Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题：Nginx代理Docker版MinIO查看分享链接提示延签失败"><a href="#问题：Nginx代理Docker版MinIO查看分享链接提示延签失败" class="headerlink" title="问题：Nginx代理Docker版MinIO查看分享链接提示延签失败"></a>问题：Nginx代理Docker版MinIO查看分享链接提示延签失败</h2><p><code>nginx minio The request signature we calculated does not match the signature</code></p><h2 id="解决：调整Nginx配置"><a href="#解决：调整Nginx配置" class="headerlink" title="解决：调整Nginx配置"></a>解决：调整Nginx配置</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">upstream minio_svr  &#123;</span><br><span class="line">    server      127.0.0.1:59001;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">server  &#123;</span><br><span class="line">    listen          80;</span><br><span class="line">    server_name     dbsvr-minio.cluee.tech;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line"></span><br><span class="line">        proxy_connect_timeout  300;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Connection "";</span><br><span class="line"></span><br><span class="line">        proxy_pass  http://minio_svr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page  500 502 503 504  /50x.html;</span><br><span class="line">    location = /50x.html &#123;</span><br><span class="line">        root        /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题：Nginx代理Docker版MinIO查看分享链接提示延签失败&quot;&gt;&lt;a href=&quot;#问题：Nginx代理Docker版MinIO查看分享链接提示延签失败&quot; class=&quot;headerlink&quot; title=&quot;问题：Nginx代理Docker版MinIO查看
+      
+    
+    </summary>
+    
+    
+      <category term="NGINX" scheme="https://loft.cluee.tech/categories/NGINX/"/>
+    
+    
+      <category term="DOCKER" scheme="https://loft.cluee.tech/tags/DOCKER/"/>
+    
+      <category term="NGINX" scheme="https://loft.cluee.tech/tags/NGINX/"/>
+    
+      <category term="MinIO" scheme="https://loft.cluee.tech/tags/MinIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006141620@PostgreSQL命令</title>
+    <link href="https://loft.cluee.tech/2020/06/14/2006141620-PostgreSQL%E5%91%BD%E4%BB%A4/"/>
+    <id>https://loft.cluee.tech/2020/06/14/2006141620-PostgreSQL%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-06-14T08:22:59.000Z</published>
+    <updated>2022-05-26T02:50:13.095Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-使用命令行连接数据库"><a href="#1-使用命令行连接数据库" class="headerlink" title="1 使用命令行连接数据库"></a>1 使用命令行连接数据库</h1><p><code>psql -U postgres -h localhost -p 5433</code></p><h1 id="2-列出所有的数据库"><a href="#2-列出所有的数据库" class="headerlink" title="2 列出所有的数据库"></a>2 列出所有的数据库</h1><p><code>\l  -- 查看所有数据库</code></p><h1 id="3-进入某个数据库"><a href="#3-进入某个数据库" class="headerlink" title="3 进入某个数据库"></a>3 进入某个数据库</h1><p><code>\c name -- name是表名</code></p><h1 id="4-列出数据库的所有数据表和视图"><a href="#4-列出数据库的所有数据表和视图" class="headerlink" title="4 列出数据库的所有数据表和视图"></a>4 列出数据库的所有数据表和视图</h1><p><code>\d -- 列出所有的数据表和视图</code></p><h1 id="5-删除表"><a href="#5-删除表" class="headerlink" title="5 删除表"></a>5 删除表</h1><p><code>drop table</code></p><h1 id="6-列出某个数据表的所有字段"><a href="#6-列出某个数据表的所有字段" class="headerlink" title="6 列出某个数据表的所有字段"></a>6 列出某个数据表的所有字段</h1><p><code>\d table name --table name 是表的名称</code></p><h1 id="7-列出视图的规则"><a href="#7-列出视图的规则" class="headerlink" title="7 列出视图的规则"></a>7 列出视图的规则</h1><p><code>\d+ view name -- view name 视图的规则</code></p><h1 id="8-退出"><a href="#8-退出" class="headerlink" title="8 退出"></a>8 退出</h1><p><code>\q --退出</code></p><h1 id="9-下面导出处数据库"><a href="#9-下面导出处数据库" class="headerlink" title="9 下面导出处数据库"></a>9 下面导出处数据库</h1><p><code>pg_dump -U postgres -h localhost -p 5434 test &gt; testname -- test 需要到出的表名 testname 是导出的文件名</code></p><h1 id="10-删除整个数据库"><a href="#10-删除整个数据库" class="headerlink" title="10 删除整个数据库"></a>10 删除整个数据库</h1><p><code>drop database  name --   name 数据库名</code></p><h1 id="11-创建空数据库"><a href="#11-创建空数据库" class="headerlink" title="11 创建空数据库"></a>11 创建空数据库</h1><p><code>create database name --  name 是数据库名</code></p><h1 id="12-导入"><a href="#12-导入" class="headerlink" title="12 导入"></a>12 导入</h1><p><code>psql -U postgres -h localhost -p 5434 test &lt; testname -- test要导入数据库的名称  testname 是之前要导入进来的文件名称</code></p><h1 id="13-重启数据库服务"><a href="#13-重启数据库服务" class="headerlink" title="13 重启数据库服务"></a>13 重启数据库服务</h1><p><code>sudo service postgresql restart</code></p><h1 id="14-清空某个数据表"><a href="#14-清空某个数据表" class="headerlink" title="14 清空某个数据表"></a>14 清空某个数据表</h1><p><code>truncate table name -- name 是表名</code></p><h1 id="15-重置自增序列"><a href="#15-重置自增序列" class="headerlink" title="15 重置自增序列"></a>15 重置自增序列</h1><p><code>alter sequence name restart with 1 --- name 序列名</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-使用命令行连接数据库&quot;&gt;&lt;a href=&quot;#1-使用命令行连接数据库&quot; class=&quot;headerlink&quot; title=&quot;1 使用命令行连接数据库&quot;&gt;&lt;/a&gt;1 使用命令行连接数据库&lt;/h1&gt;&lt;p&gt;&lt;code&gt;psql -U postgres -h loca
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="PostgreSQL" scheme="https://loft.cluee.tech/tags/PostgreSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006041800@K8S-切换namespace</title>
+    <link href="https://loft.cluee.tech/2020/06/04/2006041800-K8S-%E5%88%87%E6%8D%A2namespace/"/>
+    <id>https://loft.cluee.tech/2020/06/04/2006041800-K8S-%E5%88%87%E6%8D%A2namespace/</id>
+    <published>2020-06-04T09:52:26.000Z</published>
+    <updated>2022-05-26T02:50:13.094Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="namespaces：切换"><a href="#namespaces：切换" class="headerlink" title="namespaces：切换"></a>namespaces：切换</h1><p>要想快速切换到不同的命名空间，可以设置以下别名：</p><p><code>alias kcd=&#39;kubectl config set-context $(kubectl config current-context) --namespace&#39;</code></p><p>然后，可以使用</p><p><code>kcd some-namespace</code></p><p>在命名空间之间进行切换。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;namespaces：切换&quot;&gt;&lt;a href=&quot;#namespaces：切换&quot; class=&quot;headerlink&quot; title=&quot;namespaces：切换&quot;&gt;&lt;/a&gt;namespaces：切换&lt;/h1&gt;&lt;p&gt;要想快速切换到不同的命名空间，可以设置以下别名：&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="K8S" scheme="https://loft.cluee.tech/categories/K8S/"/>
+    
+    
+      <category term="配置" scheme="https://loft.cluee.tech/tags/%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006021740@Centos8防火墙关闭/开启，开机关闭/开启</title>
+    <link href="https://loft.cluee.tech/2020/06/02/2006021740-Centos8%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF%EF%BC%8C%E5%BC%80%E6%9C%BA%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF/"/>
+    <id>https://loft.cluee.tech/2020/06/02/2006021740-Centos8%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF%EF%BC%8C%E5%BC%80%E6%9C%BA%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF/</id>
+    <published>2020-06-02T09:40:12.000Z</published>
+    <updated>2022-05-26T02:50:13.094Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="1-firewall防火墙状态"><a href="#1-firewall防火墙状态" class="headerlink" title="1 firewall防火墙状态"></a>1 firewall防火墙状态</h1><p><code>firewall-cmd --state</code></p><h1 id="2-firewall防火墙关闭"><a href="#2-firewall防火墙关闭" class="headerlink" title="2 firewall防火墙关闭"></a>2 firewall防火墙关闭</h1><p>注意：是关闭firewalld.service，systemctl stop firewalld.service</p><p><code>systemctl stop firewalld.service</code></p><p><code>firewall-cmd --state</code></p><h1 id="3-firewall防火墙开启"><a href="#3-firewall防火墙开启" class="headerlink" title="3 firewall防火墙开启"></a>3 firewall防火墙开启</h1><p><code>systemctl start firewalld.service</code></p><h1 id="4-firewall防火墙开机自启"><a href="#4-firewall防火墙开机自启" class="headerlink" title="4 firewall防火墙开机自启"></a>4 firewall防火墙开机自启</h1><p><code>systemctl enable firewalld.service</code></p><h1 id="5-firewall防火墙开机关闭"><a href="#5-firewall防火墙开机关闭" class="headerlink" title="5 firewall防火墙开机关闭"></a>5 firewall防火墙开机关闭</h1><p><code>systemctl disable firewalld.service</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;1-firewall防火墙状态&quot;&gt;&lt;a href=&quot;#1-firewall防火墙状态&quot; class=&quot;headerlink&quot; title=&quot;1 firewall防火墙状态&quot;&gt;&lt;/a&gt;1 firewall防火墙状态&lt;/h1&gt;&lt;p&gt;&lt;code&gt;firewall-cmd
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
+    
+    
+      <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006021030@Docker Desktop for Windows</title>
+    <link href="https://loft.cluee.tech/2020/06/02/2006021030-Docker-Desktop-for-Windows/"/>
+    <id>https://loft.cluee.tech/2020/06/02/2006021030-Docker-Desktop-for-Windows/</id>
+    <published>2020-06-02T02:23:23.000Z</published>
+    <updated>2022-05-26T02:50:13.094Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Docker-Desktop-for-Windows-开启-Kubernetes"><a href="#Docker-Desktop-for-Windows-开启-Kubernetes" class="headerlink" title="Docker Desktop for Windows 开启 Kubernetes"></a>Docker Desktop for Windows 开启 Kubernetes</h1><p><a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank" rel="noopener">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a></p><h1 id="部署-Kubernetes-dashboard"><a href="#部署-Kubernetes-dashboard" class="headerlink" title="部署 Kubernetes dashboard"></a>部署 Kubernetes dashboard</h1><h2 id="kubectl-proxy"><a href="#kubectl-proxy" class="headerlink" title="kubectl proxy"></a>kubectl proxy</h2><h2 id="http-localhost-8001-api-v1-namespaces-kubernetes-dashboard-services-https-kubernetes-dashboard-proxy"><a href="#http-localhost-8001-api-v1-namespaces-kubernetes-dashboard-services-https-kubernetes-dashboard-proxy" class="headerlink" title="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"></a><a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</a></h2><p>eyJhbGciOiJSUzI1NiIsImtpZCI6IkoxbmVkSmhzYXFGVFBpbGo0UXVCVVlvVEtrMTNRZ2w2aTgtRldSR1BkWUUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLW5yam12Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGQ5ZDMzMC1iNDk1LTRiZDgtYmE2OS1kYjg5NmYyOTgyNmYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZGVmYXVsdCJ9.wWYg3fk7gGVmiSmTxWgdOb-rGJUBL6FHAyt84067ZCpXxtOLyMpRWxYQwVRWyE5DJszRJm2RDhixUePhOPFimFx1wx9KGGTfsSJOazDtdvYmq9yXCI9ABH5dyk-ViC7r_Sj5ZS9L2ECzL-U1P4AtGIHd5kllHQ6ittcIT9X81faX5YdRMk9ys5Zy82UxZqALEVw7_q-DYG99SGhdciyQ7Q_pOJLOk5cOlY24NjQFeFhoqAmd18xUkO_cLFGDKcerg3OLfb9AqtHYQsF5YoVuHXlZOrXGLrIq9b-1oIKk9DdIteg1Ja7pHs9RP0H_ZOffP26CHOGBxPgOfjclOVMtGA</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Docker-Desktop-for-Windows-开启-Kubernetes&quot;&gt;&lt;a href=&quot;#Docker-Desktop-for-Windows-开启-Kubernetes&quot; class=&quot;headerlink&quot; title=&quot;Docker Deskt
+      
+    
+    </summary>
+    
+    
+      <category term="DOCKER" scheme="https://loft.cluee.tech/categories/DOCKER/"/>
+    
+    
+      <category term="DOCKER" scheme="https://loft.cluee.tech/tags/DOCKER/"/>
+    
+      <category term="K8S" scheme="https://loft.cluee.tech/tags/K8S/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2006021000@Docker安装SqlServer</title>
+    <link href="https://loft.cluee.tech/2020/06/02/2006021000-Docker%E5%AE%89%E8%A3%85SqlServer/"/>
+    <id>https://loft.cluee.tech/2020/06/02/2006021000-Docker%E5%AE%89%E8%A3%85SqlServer/</id>
+    <published>2020-06-02T01:57:42.000Z</published>
+    <updated>2022-05-26T02:50:13.093Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h1><p><a href="https://hub.docker.com/_/microsoft-mssql-server" target="_blank" rel="noopener">https://hub.docker.com/_/microsoft-mssql-server</a></p><h1 id="运行镜像并挂载宿主机目录"><a href="#运行镜像并挂载宿主机目录" class="headerlink" title="运行镜像并挂载宿主机目录"></a>运行镜像并挂载宿主机目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/lib/docker/volumes/mssql_data</span><br><span class="line"></span><br><span class="line">chmod 777 /var/lib/docker/volumes/mssql_data</span><br><span class="line"></span><br><span class="line">sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=XXX" \</span><br><span class="line">   -p 51433:1433 --name mssql \</span><br><span class="line">   -v /var/lib/docker/volumes/mssql_data:/var/opt/mssql \</span><br><span class="line">   -d mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;下载镜像&quot;&gt;&lt;a href=&quot;#下载镜像&quot; class=&quot;headerlink&quot; title=&quot;下载镜像&quot;&gt;&lt;/a&gt;下载镜像&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://hub.docker.com/_/microsoft-mssql-server&quot; targ
+      
+    
+    </summary>
+    
+    
+      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
+    
+    
+      <category term="MSSQL" scheme="https://loft.cluee.tech/tags/MSSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2005301650@查看端口占用情况和开启端口命令</title>
+    <link href="https://loft.cluee.tech/2020/05/30/2005301650-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E5%92%8C%E5%BC%80%E5%90%AF%E7%AB%AF%E5%8F%A3%E5%91%BD%E4%BB%A4/"/>
+    <id>https://loft.cluee.tech/2020/05/30/2005301650-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E5%92%8C%E5%BC%80%E5%90%AF%E7%AB%AF%E5%8F%A3%E5%91%BD%E4%BB%A4/</id>
+    <published>2020-05-30T08:49:51.000Z</published>
+    <updated>2022-05-26T02:50:13.093Z</updated>
+    
+    <content type="html"><![CDATA[<p>Centos查看端口占用情况命令，比如查看80端口占用情况使用如下命令</p><p><code>lsof -i tcp:80</code></p><p>列出所有端口</p><p><code>netstat -ntlp</code></p><h2 id="1-开启端口（以80端口为例）"><a href="#1-开启端口（以80端口为例）" class="headerlink" title="1 开启端口（以80端口为例）"></a>1 开启端口（以80端口为例）</h2><p>方法一</p><p><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</code>       写入修改</p><p><code>/etc/init.d/iptables save</code>                                 保存修改</p><p><code>service iptables restart</code>                                  重启防火墙，修改生效</p><p>方法二</p><p><code>vi /etc/sysconfig/iptables</code>                                打开配置文件加入如下语句:</p><p><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT</code>        重启防火墙，修改完成 </p><h2 id="2-关闭端口"><a href="#2-关闭端口" class="headerlink" title="2 关闭端口"></a>2 关闭端口</h2><p>方法一</p><p><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP</code>         写入修改</p><p><code>/etc/init.d/iptables save</code>                                 保存修改</p><p><code>service iptables restart</code>                                  重启防火墙，修改生效</p><p>方法二</p><p><code>vi /etc/sysconfig/iptables</code>                                打开配置文件加入如下语句</p><p><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j DROP</code>        重启防火墙，修改完成</p><h2 id="3-查看端口状态"><a href="#3-查看端口状态" class="headerlink" title="3 查看端口状态"></a>3 查看端口状态</h2><p>有时启动应用时会发现端口已经被占用，或者是感觉有些端口自己没有使用却发现是打开的。这时我们希望知道是哪个应用/进程在使用该端口。</p><p>CentOS下可以用netstat或者lsof查看，Windows下也可以用netstat查看，不过参数会不同。</p><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><code>netstat -nap</code>              #会列出所有正在使用的端口及关联的进程/应用</p><p><code>lsof -i :portnumber</code>       #portnumber要用具体的端口号代替，可以直接列出该端口听使用进程/应用</p><p>1 检查端口被哪个进程占用</p><p><code>netstat -lnp|grep 88</code>      #88请换为你的需要的端口，如：80</p><p>SSH执行以上命令，可以查看到88端口正在被哪个进程使用。其中进程号如：1777</p><p>2 查看进程的详细信息</p><p><code>ps 1777</code></p><p>SSH执行以上命令。查看相应进程号的程序详细路径</p><p>3 杀掉进程</p><p><code>kill -9 1777</code></p><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p><code>netstat -nao</code>              #会列出端口关联的的进程号，可以通过任务管理器查看是哪个任务</p><p>最后一列为程序PID，再通过tasklist命令：</p><p><code>tasklist | findstr 2724</code></p><p>再通过任务管理结束掉这个程序就可以了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Centos查看端口占用情况命令，比如查看80端口占用情况使用如下命令&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;lsof -i tcp:80&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;列出所有端口&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;netstat -ntlp&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;1-开启端口
+      
+    
+    </summary>
+    
+    
+      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
+    
+    
+      <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2005291410@PO/DO/DTO/VO</title>
+    <link href="https://loft.cluee.tech/2020/05/29/2005291410-PO-DO-DTO-VO/"/>
+    <id>https://loft.cluee.tech/2020/05/29/2005291410-PO-DO-DTO-VO/</id>
+    <published>2020-05-29T06:08:53.000Z</published>
+    <updated>2022-05-26T02:50:13.092Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/200616/200616101-xo.jpg" alt="200616101" title="200616101"></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://dbsvr-minio.cluee.tech/loft.cluee.tech/200616/200616101-xo.jpg&quot; alt=&quot;200616101&quot; title=&quot;200616101&quot;&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="架构设计" scheme="https://loft.cluee.tech/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+    
+      <category term="XO" scheme="https://loft.cluee.tech/tags/XO/"/>
+    
+  </entry>
+  
+</feed>

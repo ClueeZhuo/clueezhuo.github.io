@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2022-05-26T03:29:04.997Z</updated>
+  <updated>2022-07-06T09:41:19.924Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2207061736@ORACLE-EXPLAIN</title>
+    <link href="https://loft.cluee.tech/2022/07/06/2207061736-ORACLE-EXPLAIN/"/>
+    <id>https://loft.cluee.tech/2022/07/06/2207061736-ORACLE-EXPLAIN/</id>
+    <published>2022-07-06T09:36:52.000Z</published>
+    <updated>2022-07-06T09:41:19.924Z</updated>
+    
+    <content type="html"><![CDATA[<p>在PL/SQL中 执行explain plain for  select …</p><p>查看Description 数据参考：</p><p>Oracle常见的执行计划步骤</p><p>这里我们介绍一些常见的执行计划中的步骤及算法。</p><h2 id="1、表访问路径"><a href="#1、表访问路径" class="headerlink" title="1、表访问路径"></a>1、表访问路径</h2><h3 id="1-TABLE-ACCESS"><a href="#1-TABLE-ACCESS" class="headerlink" title="(1)TABLE ACCESS"></a>(1)TABLE ACCESS</h3><p>FULL：全表扫描。它会访问表中的每一条记录(读取高水位线以内的每一个数据块)。</p><p>CLUSTER：通过索引簇的键来访问表。</p><p>BY INDEX ROWID：通过指定ROWID来访问表中的单条记录。ROWID是访问记录的最快方式，通常由索引访问得到。</p><p>BY USER ROWID：提供一个绑定变量、字面变量或WHERE CURRENT OF CURSOR子句来通过ROWID进行访问。</p><p>BY GLOBAL INDEX ROWID：通过由全局分区索引来获得ROWID，然后进行表访问。该访问出现在分区表中。</p><p>BY LOCAL INDEX ROWID：通过由局部分区索引获得ROWID，然后进行表访问。该访问出现在分区表中。</p><h3 id="2-EXTERNAL-TABLE-ACCESS：访问外部表。"><a href="#2-EXTERNAL-TABLE-ACCESS：访问外部表。" class="headerlink" title="(2)EXTERNAL TABLE ACCESS：访问外部表。"></a>(2)EXTERNAL TABLE ACCESS：访问外部表。</h3><h3 id="3-RESULT-CACHE：这个SQL结果集可能来自结果集缓存。"><a href="#3-RESULT-CACHE：这个SQL结果集可能来自结果集缓存。" class="headerlink" title="(3)RESULT CACHE：这个SQL结果集可能来自结果集缓存。"></a>(3)RESULT CACHE：这个SQL结果集可能来自结果集缓存。</h3><h3 id="4-MAT-VIEW-REWRITE-ACCESS：SQL被重写以利用物化视图。"><a href="#4-MAT-VIEW-REWRITE-ACCESS：SQL被重写以利用物化视图。" class="headerlink" title="(4)MAT_VIEW REWRITE ACCESS：SQL被重写以利用物化视图。"></a>(4)MAT_VIEW REWRITE ACCESS：SQL被重写以利用物化视图。</h3><h2 id="2、索引操作"><a href="#2、索引操作" class="headerlink" title="2、索引操作"></a>2、索引操作</h2><h3 id="1-AND-EQUAL：合并来自一个或多个索引的结果集。"><a href="#1-AND-EQUAL：合并来自一个或多个索引的结果集。" class="headerlink" title="(1)AND-EQUAL：合并来自一个或多个索引的结果集。"></a>(1)AND-EQUAL：合并来自一个或多个索引的结果集。</h3><h3 id="2-INDEX"><a href="#2-INDEX" class="headerlink" title="(2)INDEX"></a>(2)INDEX</h3><p>UNIQUE SCAN：只返回一条记录的地址(ROWID)的索引扫描。</p><p>RANGE SCAN：返回多条记录的ROWID的索引检索。一般出现这样的访问，是因为出现了区间操作符。</p><p>FULL SCAN：按照索引键的顺序扫描整个索引。</p><p>SKIP SCAN：组合索引键中非前导列索引检索。</p><p>FULL SCAN(MAX/MIN)：检索索引中的最高或最低的索引条目。</p><p>FAST FULL SCAN：按照块顺序扫描每一个索引的条目，可能会使用多块读取。</p><h3 id="3-DOMAIN-INDEX：应用域索引。"><a href="#3-DOMAIN-INDEX：应用域索引。" class="headerlink" title="(3)DOMAIN INDEX：应用域索引。"></a>(3)DOMAIN INDEX：应用域索引。</h3><h2 id="3、位图索引操作"><a href="#3、位图索引操作" class="headerlink" title="3、位图索引操作"></a>3、位图索引操作</h2><h3 id="1-BITMAP"><a href="#1-BITMAP" class="headerlink" title="(1)BITMAP"></a>(1)BITMAP</h3><p>CONVERSION：将位转换为ROWID或相反。</p><p>INDEX：从位图中撮一个值或一个范围的值。</p><p>MERGE：合并位图。</p><p>MINUS：从一个位图减去另一个位图。</p><p>OR：对两个位图进行OR操作。</p><h2 id="4、表连接操作"><a href="#4、表连接操作" class="headerlink" title="4、表连接操作"></a>4、表连接操作</h2><h3 id="1-CONNECT-BY：对前一个步骤的输出结果执行一个层次化的自连接操作。"><a href="#1-CONNECT-BY：对前一个步骤的输出结果执行一个层次化的自连接操作。" class="headerlink" title="(1)CONNECT BY：对前一个步骤的输出结果执行一个层次化的自连接操作。"></a>(1)CONNECT BY：对前一个步骤的输出结果执行一个层次化的自连接操作。</h3><h3 id="2-MERGE-JOIN：对前一个步骤的输出结果执行一个合并连接。"><a href="#2-MERGE-JOIN：对前一个步骤的输出结果执行一个合并连接。" class="headerlink" title="(2)MERGE JOIN：对前一个步骤的输出结果执行一个合并连接。"></a>(2)MERGE JOIN：对前一个步骤的输出结果执行一个合并连接。</h3><h3 id="3-NESTED-LOOP：对前一个步骤执行嵌套循环连接。对上一层结果集的每一行，都会扫描下一层结果集以找到匹配记录。"><a href="#3-NESTED-LOOP：对前一个步骤执行嵌套循环连接。对上一层结果集的每一行，都会扫描下一层结果集以找到匹配记录。" class="headerlink" title="(3)NESTED LOOP：对前一个步骤执行嵌套循环连接。对上一层结果集的每一行，都会扫描下一层结果集以找到匹配记录。"></a>(3)NESTED LOOP：对前一个步骤执行嵌套循环连接。对上一层结果集的每一行，都会扫描下一层结果集以找到匹配记录。</h3><h3 id="4-HASH-JOIN：对两个记录进行散列连接。"><a href="#4-HASH-JOIN：对两个记录进行散列连接。" class="headerlink" title="(4)HASH JOIN：对两个记录进行散列连接。"></a>(4)HASH JOIN：对两个记录进行散列连接。</h3><h3 id="5-任意连接操作"><a href="#5-任意连接操作" class="headerlink" title="(5)任意连接操作"></a>(5)任意连接操作</h3><p>OUTER：外连接</p><p>ANTI：反连接</p><p>SEMI：反连接</p><p>CARTESIAN：一个结果集中的每一条记录都与另一个结果集中的每一条记录进行连接。</p><h2 id="5、集合操作"><a href="#5、集合操作" class="headerlink" title="5、集合操作"></a>5、集合操作</h2><p>CONCATENATION：与显式指定一个UNION子句一样，多个结果集被按照同样的方式做合并。它通常发生在对索引列使用OR运算时。</p><p>INTERSECTION：对两个结果进行比较，只返回两个结果集中都存在的记录。</p><p>MINUS：除了在第二个结果集中出现的记录外，返回第一个结果集中的所有记录。</p><p>UNION-ALL：对两个结果集进行合并，并返回两个结果集中的所有记录。</p><p>UNION：与UNION-ALL相同，但是它不返回重复记录。</p><p>VIEW：访问一个视图定义或或创建一个临时表用于存放结果集。</p><h2 id="6、分区操作"><a href="#6、分区操作" class="headerlink" title="6、分区操作"></a>6、分区操作</h2><h3 id="1-PARTITION"><a href="#1-PARTITION" class="headerlink" title="(1)PARTITION"></a>(1)PARTITION</h3><p>SINGLE：访问单个分区。</p><p>ITERATOR：访问多个分区。</p><p>ALL：访问所有分区。</p><p>INLIST：基于IN列表中的值来访问分区。</p><h2 id="7、汇总操作"><a href="#7、汇总操作" class="headerlink" title="7、汇总操作"></a>7、汇总操作</h2><h3 id="1-COUNT：使用COUNT函数进计算。"><a href="#1-COUNT：使用COUNT函数进计算。" class="headerlink" title="(1)COUNT：使用COUNT函数进计算。"></a>(1)COUNT：使用COUNT函数进计算。</h3><p>STOPKEY：计算结果中的记录，当达到一定数量时，就停止计算。这通常发生在使用了WHERE子句且指定了ROWNUM，如：WHERE ROWNUM &lt;= 10。</p><h3 id="2-BUFFER-SORT：对临时结果集做一次内在排序。"><a href="#2-BUFFER-SORT：对临时结果集做一次内在排序。" class="headerlink" title="(2)BUFFER SORT：对临时结果集做一次内在排序。"></a>(2)BUFFER SORT：对临时结果集做一次内在排序。</h3><h3 id="3-HASH-GROUP-BY：使用散列进行分组操作。"><a href="#3-HASH-GROUP-BY：使用散列进行分组操作。" class="headerlink" title="(3)HASH GROUP BY：使用散列进行分组操作。"></a>(3)HASH GROUP BY：使用散列进行分组操作。</h3><h3 id="4-INLIST-ITERATOR：对IN中的每一个值都实现一次子操作。"><a href="#4-INLIST-ITERATOR：对IN中的每一个值都实现一次子操作。" class="headerlink" title="(4)INLIST ITERATOR：对IN中的每一个值都实现一次子操作。"></a>(4)INLIST ITERATOR：对IN中的每一个值都实现一次子操作。</h3><h3 id="5-SORT"><a href="#5-SORT" class="headerlink" title="(5)SORT"></a>(5)SORT</h3><p>GROUP BY：为了满足GROUP BY而对结果集进行排序。</p><p>AGGREGATE：当在已分组好的数据上使用分组函数时，会出现此操作。</p><p>JOIN：了进行合并连接而对记录进行排序。</p><p>UNIQUE：排除重复记录的排序操作，通常是使用DISTINCT子句。</p><p>GROUP BY：为满足GROUP BY子句，对结果集进行排序分组。</p><h2 id="8、其他操作"><a href="#8、其他操作" class="headerlink" title="8、其他操作"></a>8、其他操作</h2><h3 id="1-FOR-UPDATE：使用了FOR-UPDATE子句。"><a href="#1-FOR-UPDATE：使用了FOR-UPDATE子句。" class="headerlink" title="(1)FOR UPDATE：使用了FOR UPDATE子句。"></a>(1)FOR UPDATE：使用了FOR UPDATE子句。</h3><h3 id="2-COLLECTION-ITERATOR：使用了表函数提取记录。"><a href="#2-COLLECTION-ITERATOR：使用了表函数提取记录。" class="headerlink" title="(2)COLLECTION ITERATOR：使用了表函数提取记录。"></a>(2)COLLECTION ITERATOR：使用了表函数提取记录。</h3><h3 id="3-FAST-DUAL：访问DUAL表。"><a href="#3-FAST-DUAL：访问DUAL表。" class="headerlink" title="(3)FAST DUAL：访问DUAL表。"></a>(3)FAST DUAL：访问DUAL表。</h3><h3 id="4-FILTER：从结果集中排除掉不匹配选取条件的记录。"><a href="#4-FILTER：从结果集中排除掉不匹配选取条件的记录。" class="headerlink" title="(4)FILTER：从结果集中排除掉不匹配选取条件的记录。"></a>(4)FILTER：从结果集中排除掉不匹配选取条件的记录。</h3><h3 id="5-REMOTE：通过数据库连接，访问一个外部的数据库。"><a href="#5-REMOTE：通过数据库连接，访问一个外部的数据库。" class="headerlink" title="(5)REMOTE：通过数据库连接，访问一个外部的数据库。"></a>(5)REMOTE：通过数据库连接，访问一个外部的数据库。</h3><h3 id="6-FIRST-ROW：获取查询的第一条记录。"><a href="#6-FIRST-ROW：获取查询的第一条记录。" class="headerlink" title="(6)FIRST ROW：获取查询的第一条记录。"></a>(6)FIRST ROW：获取查询的第一条记录。</h3><h3 id="7-SEQUENCE：使用了Oracle序列。"><a href="#7-SEQUENCE：使用了Oracle序列。" class="headerlink" title="(7)SEQUENCE：使用了Oracle序列。"></a>(7)SEQUENCE：使用了Oracle序列。</h3><h3 id="8-LOAD-AS-SELECT：使用SELECT进行直接路径的INSERT操作。"><a href="#8-LOAD-AS-SELECT：使用SELECT进行直接路径的INSERT操作。" class="headerlink" title="(8)LOAD AS SELECT：使用SELECT进行直接路径的INSERT操作。"></a>(8)LOAD AS SELECT：使用SELECT进行直接路径的INSERT操作。</h3><h3 id="9-FIXED-TABLE：访问固定的-X-V-表。"><a href="#9-FIXED-TABLE：访问固定的-X-V-表。" class="headerlink" title="(9)FIXED TABLE：访问固定的(X$/V$)表。"></a>(9)FIXED TABLE：访问固定的(X$/V$)表。</h3><h3 id="10-FIXED-INDEX：访问固定的索引。"><a href="#10-FIXED-INDEX：访问固定的索引。" class="headerlink" title="(10)FIXED INDEX：访问固定的索引。"></a>(10)FIXED INDEX：访问固定的索引。</h3><h3 id="11-WINDOW-BUFFER：支持分析函数的内部操作。"><a href="#11-WINDOW-BUFFER：支持分析函数的内部操作。" class="headerlink" title="(11)WINDOW BUFFER：支持分析函数的内部操作。"></a>(11)WINDOW BUFFER：支持分析函数的内部操作。</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;在PL/SQL中 执行explain plain for  select …&lt;/p&gt;
+&lt;p&gt;查看Description 数据参考：&lt;/p&gt;
+&lt;p&gt;Oracle常见的执行计划步骤&lt;/p&gt;
+&lt;p&gt;这里我们介绍一些常见的执行计划中的步骤及算法。&lt;/p&gt;
+&lt;h2 id=&quot;1、表访问
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2205261109@DDD</title>
@@ -525,33 +551,6 @@
     
     
       <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2005291410@PO/DO/DTO/VO</title>
-    <link href="https://loft.cluee.tech/2020/05/29/2005291410-PO-DO-DTO-VO/"/>
-    <id>https://loft.cluee.tech/2020/05/29/2005291410-PO-DO-DTO-VO/</id>
-    <published>2020-05-29T06:08:53.000Z</published>
-    <updated>2022-05-26T02:50:13.092Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://dbsvr-minio.cluee.tech/loft.cluee.tech/200616/200616101-xo.jpg" alt="200616101" title="200616101"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;img src=&quot;http://dbsvr-minio.cluee.tech/loft.cluee.tech/200616/200616101-xo.jpg&quot; alt=&quot;200616101&quot; title=&quot;200616101&quot;&gt;&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-      <category term="架构设计" scheme="https://loft.cluee.tech/categories/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
-    
-    
-      <category term="XO" scheme="https://loft.cluee.tech/tags/XO/"/>
     
   </entry>
   

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2022-07-06T09:41:19.924Z</updated>
+  <updated>2023-02-22T08:18:36.671Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2302221614@Sonar</title>
+    <link href="https://loft.cluee.tech/2023/02/22/2302221614-Sonar/"/>
+    <id>https://loft.cluee.tech/2023/02/22/2302221614-Sonar/</id>
+    <published>2023-02-22T08:14:57.000Z</published>
+    <updated>2023-02-22T08:18:36.671Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="dotnet-sonarscanner"><a href="#dotnet-sonarscanner" class="headerlink" title="dotnet-sonarscanner"></a>dotnet-sonarscanner</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet tool install --global dotnet-sonarscanner</span><br></pre></td></tr></table></figure><h3 id="begin"><a href="#begin" class="headerlink" title="begin"></a>begin</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet sonarscanner begin /k:<span class="string">"Hisense.Pipeline.Net7"</span> /d:sonar.host.url=<span class="string">"http://localhost:59001"</span>  /d:sonar.login=<span class="string">"33842a647ec7bd8c7803e2a24aab860b2aea04de"</span></span><br></pre></td></tr></table></figure><h3 id="build"><a href="#build" class="headerlink" title="build"></a>build</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet build</span><br></pre></td></tr></table></figure><h3 id="end"><a href="#end" class="headerlink" title="end"></a>end</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dotnet sonarscanner end /d:sonar.login=<span class="string">"33842a647ec7bd8c7803e2a24aab860b2aea04de"</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;dotnet-sonarscanner&quot;&gt;&lt;a href=&quot;#dotnet-sonarscanner&quot; class=&quot;headerlink&quot; title=&quot;dotnet-sonarscanner&quot;&gt;&lt;/a&gt;dotnet-sonarscanner&lt;/h3&gt;&lt;figu
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2207061736@ORACLE-EXPLAIN</title>
@@ -521,36 +543,6 @@
     
     
       <category term="MSSQL" scheme="https://loft.cluee.tech/tags/MSSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2005301650@查看端口占用情况和开启端口命令</title>
-    <link href="https://loft.cluee.tech/2020/05/30/2005301650-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E5%92%8C%E5%BC%80%E5%90%AF%E7%AB%AF%E5%8F%A3%E5%91%BD%E4%BB%A4/"/>
-    <id>https://loft.cluee.tech/2020/05/30/2005301650-%E6%9F%A5%E7%9C%8B%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8%E6%83%85%E5%86%B5%E5%92%8C%E5%BC%80%E5%90%AF%E7%AB%AF%E5%8F%A3%E5%91%BD%E4%BB%A4/</id>
-    <published>2020-05-30T08:49:51.000Z</published>
-    <updated>2022-05-26T02:50:13.093Z</updated>
-    
-    <content type="html"><![CDATA[<p>Centos查看端口占用情况命令，比如查看80端口占用情况使用如下命令</p><p><code>lsof -i tcp:80</code></p><p>列出所有端口</p><p><code>netstat -ntlp</code></p><h2 id="1-开启端口（以80端口为例）"><a href="#1-开启端口（以80端口为例）" class="headerlink" title="1 开启端口（以80端口为例）"></a>1 开启端口（以80端口为例）</h2><p>方法一</p><p><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT</code>       写入修改</p><p><code>/etc/init.d/iptables save</code>                                 保存修改</p><p><code>service iptables restart</code>                                  重启防火墙，修改生效</p><p>方法二</p><p><code>vi /etc/sysconfig/iptables</code>                                打开配置文件加入如下语句:</p><p><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT</code>        重启防火墙，修改完成 </p><h2 id="2-关闭端口"><a href="#2-关闭端口" class="headerlink" title="2 关闭端口"></a>2 关闭端口</h2><p>方法一</p><p><code>/sbin/iptables -I INPUT -p tcp --dport 80 -j DROP</code>         写入修改</p><p><code>/etc/init.d/iptables save</code>                                 保存修改</p><p><code>service iptables restart</code>                                  重启防火墙，修改生效</p><p>方法二</p><p><code>vi /etc/sysconfig/iptables</code>                                打开配置文件加入如下语句</p><p><code>-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j DROP</code>        重启防火墙，修改完成</p><h2 id="3-查看端口状态"><a href="#3-查看端口状态" class="headerlink" title="3 查看端口状态"></a>3 查看端口状态</h2><p>有时启动应用时会发现端口已经被占用，或者是感觉有些端口自己没有使用却发现是打开的。这时我们希望知道是哪个应用/进程在使用该端口。</p><p>CentOS下可以用netstat或者lsof查看，Windows下也可以用netstat查看，不过参数会不同。</p><h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p><code>netstat -nap</code>              #会列出所有正在使用的端口及关联的进程/应用</p><p><code>lsof -i :portnumber</code>       #portnumber要用具体的端口号代替，可以直接列出该端口听使用进程/应用</p><p>1 检查端口被哪个进程占用</p><p><code>netstat -lnp|grep 88</code>      #88请换为你的需要的端口，如：80</p><p>SSH执行以上命令，可以查看到88端口正在被哪个进程使用。其中进程号如：1777</p><p>2 查看进程的详细信息</p><p><code>ps 1777</code></p><p>SSH执行以上命令。查看相应进程号的程序详细路径</p><p>3 杀掉进程</p><p><code>kill -9 1777</code></p><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p><code>netstat -nao</code>              #会列出端口关联的的进程号，可以通过任务管理器查看是哪个任务</p><p>最后一列为程序PID，再通过tasklist命令：</p><p><code>tasklist | findstr 2724</code></p><p>再通过任务管理结束掉这个程序就可以了</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Centos查看端口占用情况命令，比如查看80端口占用情况使用如下命令&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;lsof -i tcp:80&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;列出所有端口&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;netstat -ntlp&lt;/code&gt;&lt;/p&gt;
-&lt;h2 id=&quot;1-开启端口
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
-    
-    
-      <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

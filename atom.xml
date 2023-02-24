@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2023-02-22T08:18:36.671Z</updated>
+  <updated>2023-02-24T05:46:33.624Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2302241343@SSH</title>
+    <link href="https://loft.cluee.tech/2023/02/24/2302241343-SSH/"/>
+    <id>https://loft.cluee.tech/2023/02/24/2302241343-SSH/</id>
+    <published>2023-02-24T05:43:13.000Z</published>
+    <updated>2023-02-24T05:46:33.624Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="安装ssh服务"><a href="#安装ssh服务" class="headerlink" title="安装ssh服务"></a>安装ssh服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install openssh-server</span><br></pre></td></tr></table></figure><h3 id="启动ssh服务"><a href="#启动ssh服务" class="headerlink" title="启动ssh服务"></a>启动ssh服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/ssh start</span><br></pre></td></tr></table></figure><h3 id="设置开机自启动"><a href="#设置开机自启动" class="headerlink" title="设置开机自启动"></a>设置开机自启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">enable</span> ssh</span><br></pre></td></tr></table></figure><h3 id="关闭ssh开机自动启动命令"><a href="#关闭ssh开机自动启动命令" class="headerlink" title="关闭ssh开机自动启动命令"></a>关闭ssh开机自动启动命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="built_in">disable</span> ssh</span><br></pre></td></tr></table></figure><h3 id="单次开启ssh"><a href="#单次开启ssh" class="headerlink" title="单次开启ssh"></a>单次开启ssh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start ssh</span><br></pre></td></tr></table></figure><h3 id="单次关闭ssh"><a href="#单次关闭ssh" class="headerlink" title="单次关闭ssh"></a>单次关闭ssh</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl stop ssh</span><br></pre></td></tr></table></figure><h3 id="设置好后重启"><a href="#设置好后重启" class="headerlink" title="设置好后重启"></a>设置好后重启</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">reboot</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;安装ssh服务&quot;&gt;&lt;a href=&quot;#安装ssh服务&quot; class=&quot;headerlink&quot; title=&quot;安装ssh服务&quot;&gt;&lt;/a&gt;安装ssh服务&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="https://loft.cluee.tech/categories/Linux/"/>
+    
+    
+      <category term="SSH" scheme="https://loft.cluee.tech/tags/SSH/"/>
+    
+  </entry>
   
   <entry>
     <title>2302221614@Sonar</title>
@@ -517,32 +543,6 @@
       <category term="DOCKER" scheme="https://loft.cluee.tech/tags/DOCKER/"/>
     
       <category term="K8S" scheme="https://loft.cluee.tech/tags/K8S/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2006021000@Docker安装SqlServer</title>
-    <link href="https://loft.cluee.tech/2020/06/02/2006021000-Docker%E5%AE%89%E8%A3%85SqlServer/"/>
-    <id>https://loft.cluee.tech/2020/06/02/2006021000-Docker%E5%AE%89%E8%A3%85SqlServer/</id>
-    <published>2020-06-02T01:57:42.000Z</published>
-    <updated>2022-05-26T02:50:13.093Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="下载镜像"><a href="#下载镜像" class="headerlink" title="下载镜像"></a>下载镜像</h1><p><a href="https://hub.docker.com/_/microsoft-mssql-server" target="_blank" rel="noopener">https://hub.docker.com/_/microsoft-mssql-server</a></p><h1 id="运行镜像并挂载宿主机目录"><a href="#运行镜像并挂载宿主机目录" class="headerlink" title="运行镜像并挂载宿主机目录"></a>运行镜像并挂载宿主机目录</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir /var/lib/docker/volumes/mssql_data</span><br><span class="line"></span><br><span class="line">chmod 777 /var/lib/docker/volumes/mssql_data</span><br><span class="line"></span><br><span class="line">sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=XXX" \</span><br><span class="line">   -p 51433:1433 --name mssql \</span><br><span class="line">   -v /var/lib/docker/volumes/mssql_data:/var/opt/mssql \</span><br><span class="line">   -d mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;下载镜像&quot;&gt;&lt;a href=&quot;#下载镜像&quot; class=&quot;headerlink&quot; title=&quot;下载镜像&quot;&gt;&lt;/a&gt;下载镜像&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://hub.docker.com/_/microsoft-mssql-server&quot; targ
-      
-    
-    </summary>
-    
-    
-      <category term="SQL" scheme="https://loft.cluee.tech/categories/SQL/"/>
-    
-    
-      <category term="MSSQL" scheme="https://loft.cluee.tech/tags/MSSQL/"/>
     
   </entry>
   

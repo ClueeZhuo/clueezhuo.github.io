@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2023-02-24T05:46:33.624Z</updated>
+  <updated>2024-08-08T03:02:40.127Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2408081050@电源计划</title>
+    <link href="https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/"/>
+    <id>https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/</id>
+    <published>2024-08-08T02:50:00.000Z</published>
+    <updated>2024-08-08T03:02:40.127Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="可用电源计划"><a href="#可用电源计划" class="headerlink" title="可用电源计划"></a>可用电源计划</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powercfg -l</span><br><span class="line">电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)</span><br><span class="line">电源方案 GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (高性能)</span><br><span class="line">电源方案 GUID: 2a8f954d-051e-4a88-9659-b60b266fdcfe  (卓越性能) *</span><br></pre></td></tr></table></figure><h3 id="设置平衡"><a href="#设置平衡" class="headerlink" title="设置平衡"></a>设置平衡</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e</span><br></pre></td></tr></table></figure><h3 id="设置高性能"><a href="#设置高性能" class="headerlink" title="设置高性能"></a>设置高性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</span><br></pre></td></tr></table></figure><h3 id="设置卓越性能"><a href="#设置卓越性能" class="headerlink" title="设置卓越性能"></a>设置卓越性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 2a8f954d-051e-4a88-9659-b60b266fdcfe</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;可用电源计划&quot;&gt;&lt;a href=&quot;#可用电源计划&quot; class=&quot;headerlink&quot; title=&quot;可用电源计划&quot;&gt;&lt;/a&gt;可用电源计划&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://loft.cluee.tech/categories/Windows/"/>
+    
+    
+      <category term="SHELL" scheme="https://loft.cluee.tech/tags/SHELL/"/>
+    
+  </entry>
   
   <entry>
     <title>2302241343@SSH</title>
@@ -515,34 +541,6 @@
     
     
       <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2006021030@Docker Desktop for Windows</title>
-    <link href="https://loft.cluee.tech/2020/06/02/2006021030-Docker-Desktop-for-Windows/"/>
-    <id>https://loft.cluee.tech/2020/06/02/2006021030-Docker-Desktop-for-Windows/</id>
-    <published>2020-06-02T02:23:23.000Z</published>
-    <updated>2022-05-26T02:50:13.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Docker-Desktop-for-Windows-开启-Kubernetes"><a href="#Docker-Desktop-for-Windows-开启-Kubernetes" class="headerlink" title="Docker Desktop for Windows 开启 Kubernetes"></a>Docker Desktop for Windows 开启 Kubernetes</h1><p><a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank" rel="noopener">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a></p><h1 id="部署-Kubernetes-dashboard"><a href="#部署-Kubernetes-dashboard" class="headerlink" title="部署 Kubernetes dashboard"></a>部署 Kubernetes dashboard</h1><h2 id="kubectl-proxy"><a href="#kubectl-proxy" class="headerlink" title="kubectl proxy"></a>kubectl proxy</h2><h2 id="http-localhost-8001-api-v1-namespaces-kubernetes-dashboard-services-https-kubernetes-dashboard-proxy"><a href="#http-localhost-8001-api-v1-namespaces-kubernetes-dashboard-services-https-kubernetes-dashboard-proxy" class="headerlink" title="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"></a><a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/" target="_blank" rel="noopener">http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</a></h2><p>eyJhbGciOiJSUzI1NiIsImtpZCI6IkoxbmVkSmhzYXFGVFBpbGo0UXVCVVlvVEtrMTNRZ2w2aTgtRldSR1BkWUUifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJkZWZhdWx0LXRva2VuLW5yam12Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImRlZmF1bHQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI1OGQ5ZDMzMC1iNDk1LTRiZDgtYmE2OS1kYjg5NmYyOTgyNmYiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06ZGVmYXVsdCJ9.wWYg3fk7gGVmiSmTxWgdOb-rGJUBL6FHAyt84067ZCpXxtOLyMpRWxYQwVRWyE5DJszRJm2RDhixUePhOPFimFx1wx9KGGTfsSJOazDtdvYmq9yXCI9ABH5dyk-ViC7r_Sj5ZS9L2ECzL-U1P4AtGIHd5kllHQ6ittcIT9X81faX5YdRMk9ys5Zy82UxZqALEVw7_q-DYG99SGhdciyQ7Q_pOJLOk5cOlY24NjQFeFhoqAmd18xUkO_cLFGDKcerg3OLfb9AqtHYQsF5YoVuHXlZOrXGLrIq9b-1oIKk9DdIteg1Ja7pHs9RP0H_ZOffP26CHOGBxPgOfjclOVMtGA</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Docker-Desktop-for-Windows-开启-Kubernetes&quot;&gt;&lt;a href=&quot;#Docker-Desktop-for-Windows-开启-Kubernetes&quot; class=&quot;headerlink&quot; title=&quot;Docker Deskt
-      
-    
-    </summary>
-    
-    
-      <category term="DOCKER" scheme="https://loft.cluee.tech/categories/DOCKER/"/>
-    
-    
-      <category term="DOCKER" scheme="https://loft.cluee.tech/tags/DOCKER/"/>
-    
-      <category term="K8S" scheme="https://loft.cluee.tech/tags/K8S/"/>
     
   </entry>
   

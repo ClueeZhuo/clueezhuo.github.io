@@ -43,19 +43,19 @@
   </entry>
   
   <entry>
-    <title>2408081050@电源计划</title>
+    <title>2408141630@MQTTX-CLI</title>
     <link href="https://loft.cluee.tech/2024/08/08/2408141630-MQTTX-CLI/"/>
     <id>https://loft.cluee.tech/2024/08/08/2408141630-MQTTX-CLI/</id>
     <published>2024-08-08T02:50:00.000Z</published>
-    <updated>2024-08-08T03:02:40.127Z</updated>
+    <updated>2024-08-14T08:40:53.429Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="可用电源计划"><a href="#可用电源计划" class="headerlink" title="可用电源计划"></a>可用电源计划</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powercfg -l</span><br><span class="line">电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)</span><br><span class="line">电源方案 GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (高性能)</span><br><span class="line">电源方案 GUID: 2a8f954d-051e-4a88-9659-b60b266fdcfe  (卓越性能) *</span><br></pre></td></tr></table></figure><h3 id="设置平衡"><a href="#设置平衡" class="headerlink" title="设置平衡"></a>设置平衡</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e</span><br></pre></td></tr></table></figure><h3 id="设置高性能"><a href="#设置高性能" class="headerlink" title="设置高性能"></a>设置高性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</span><br></pre></td></tr></table></figure><h3 id="设置卓越性能"><a href="#设置卓越性能" class="headerlink" title="设置卓越性能"></a>设置卓越性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 2a8f954d-051e-4a88-9659-b60b266fdcfe</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://mqttx.app/docs/cli/get-started</span><br></pre></td></tr></table></figure><h3 id="WS-WSS"><a href="#WS-WSS" class="headerlink" title="WS/WSS"></a>WS/WSS</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mqttx conn -h <span class="string">'openmes-iotgateway-emqx-ws.clouddev.hisense.com'</span> -p 8083 -i cli_101 -l ws</span><br><span class="line"></span><br><span class="line">mqttx conn -h <span class="string">'openmes-iotgateway-emqx-wss.clouddev.hisense.com'</span> -p 8084 -i cli_102 -l wss</span><br><span class="line"></span><br><span class="line">mqttx conn -h <span class="string">'emqx-wss.clouddev.hisense.com'</span> -p 8084 -i cli_103 -l wss</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;可用电源计划&quot;&gt;&lt;a href=&quot;#可用电源计划&quot; class=&quot;headerlink&quot; title=&quot;可用电源计划&quot;&gt;&lt;/a&gt;可用电源计划&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+        &lt;h3 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
       
     
     </summary>

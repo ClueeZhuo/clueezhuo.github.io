@@ -43,6 +43,32 @@
   </entry>
   
   <entry>
+    <title>2408081050@电源计划</title>
+    <link href="https://loft.cluee.tech/2024/08/08/2408141630-MQTTX-CLI/"/>
+    <id>https://loft.cluee.tech/2024/08/08/2408141630-MQTTX-CLI/</id>
+    <published>2024-08-08T02:50:00.000Z</published>
+    <updated>2024-08-08T03:02:40.127Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="可用电源计划"><a href="#可用电源计划" class="headerlink" title="可用电源计划"></a>可用电源计划</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powercfg -l</span><br><span class="line">电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)</span><br><span class="line">电源方案 GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (高性能)</span><br><span class="line">电源方案 GUID: 2a8f954d-051e-4a88-9659-b60b266fdcfe  (卓越性能) *</span><br></pre></td></tr></table></figure><h3 id="设置平衡"><a href="#设置平衡" class="headerlink" title="设置平衡"></a>设置平衡</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e</span><br></pre></td></tr></table></figure><h3 id="设置高性能"><a href="#设置高性能" class="headerlink" title="设置高性能"></a>设置高性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</span><br></pre></td></tr></table></figure><h3 id="设置卓越性能"><a href="#设置卓越性能" class="headerlink" title="设置卓越性能"></a>设置卓越性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 2a8f954d-051e-4a88-9659-b60b266fdcfe</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;可用电源计划&quot;&gt;&lt;a href=&quot;#可用电源计划&quot; class=&quot;headerlink&quot; title=&quot;可用电源计划&quot;&gt;&lt;/a&gt;可用电源计划&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://loft.cluee.tech/categories/Windows/"/>
+    
+    
+      <category term="SHELL" scheme="https://loft.cluee.tech/tags/SHELL/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2302241343@SSH</title>
     <link href="https://loft.cluee.tech/2023/02/24/2302241343-SSH/"/>
     <id>https://loft.cluee.tech/2023/02/24/2302241343-SSH/</id>
@@ -515,32 +541,6 @@
     
     
       <category term="配置" scheme="https://loft.cluee.tech/tags/%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2006021740@Centos8防火墙关闭/开启，开机关闭/开启</title>
-    <link href="https://loft.cluee.tech/2020/06/02/2006021740-Centos8%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF%EF%BC%8C%E5%BC%80%E6%9C%BA%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF/"/>
-    <id>https://loft.cluee.tech/2020/06/02/2006021740-Centos8%E9%98%B2%E7%81%AB%E5%A2%99%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF%EF%BC%8C%E5%BC%80%E6%9C%BA%E5%85%B3%E9%97%AD-%E5%BC%80%E5%90%AF/</id>
-    <published>2020-06-02T09:40:12.000Z</published>
-    <updated>2022-05-26T02:50:13.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="1-firewall防火墙状态"><a href="#1-firewall防火墙状态" class="headerlink" title="1 firewall防火墙状态"></a>1 firewall防火墙状态</h1><p><code>firewall-cmd --state</code></p><h1 id="2-firewall防火墙关闭"><a href="#2-firewall防火墙关闭" class="headerlink" title="2 firewall防火墙关闭"></a>2 firewall防火墙关闭</h1><p>注意：是关闭firewalld.service，systemctl stop firewalld.service</p><p><code>systemctl stop firewalld.service</code></p><p><code>firewall-cmd --state</code></p><h1 id="3-firewall防火墙开启"><a href="#3-firewall防火墙开启" class="headerlink" title="3 firewall防火墙开启"></a>3 firewall防火墙开启</h1><p><code>systemctl start firewalld.service</code></p><h1 id="4-firewall防火墙开机自启"><a href="#4-firewall防火墙开机自启" class="headerlink" title="4 firewall防火墙开机自启"></a>4 firewall防火墙开机自启</h1><p><code>systemctl enable firewalld.service</code></p><h1 id="5-firewall防火墙开机关闭"><a href="#5-firewall防火墙开机关闭" class="headerlink" title="5 firewall防火墙开机关闭"></a>5 firewall防火墙开机关闭</h1><p><code>systemctl disable firewalld.service</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;1-firewall防火墙状态&quot;&gt;&lt;a href=&quot;#1-firewall防火墙状态&quot; class=&quot;headerlink&quot; title=&quot;1 firewall防火墙状态&quot;&gt;&lt;/a&gt;1 firewall防火墙状态&lt;/h1&gt;&lt;p&gt;&lt;code&gt;firewall-cmd
-      
-    
-    </summary>
-    
-    
-      <category term="CentOS" scheme="https://loft.cluee.tech/categories/CentOS/"/>
-    
-    
-      <category term="基础" scheme="https://loft.cluee.tech/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

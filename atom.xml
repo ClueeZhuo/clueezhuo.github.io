@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://loft.cluee.tech/"/>
-  <updated>2024-08-08T03:02:40.127Z</updated>
+  <updated>2024-08-18T17:10:02.758Z</updated>
   <id>https://loft.cluee.tech/</id>
   
   <author>
@@ -17,25 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2408081050@电源计划</title>
-    <link href="https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/"/>
-    <id>https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/</id>
-    <published>2024-08-08T02:50:00.000Z</published>
-    <updated>2024-08-08T03:02:40.127Z</updated>
+    <title>2408190105@NGINX+EMQX+WSS</title>
+    <link href="https://loft.cluee.tech/2024/08/19/2408190105-NGINX+EMQX+WSS/"/>
+    <id>https://loft.cluee.tech/2024/08/19/2408190105-NGINX+EMQX+WSS/</id>
+    <published>2024-08-18T17:05:00.000Z</published>
+    <updated>2024-08-18T17:10:02.758Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="可用电源计划"><a href="#可用电源计划" class="headerlink" title="可用电源计划"></a>可用电源计划</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powercfg -l</span><br><span class="line">电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)</span><br><span class="line">电源方案 GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (高性能)</span><br><span class="line">电源方案 GUID: 2a8f954d-051e-4a88-9659-b60b266fdcfe  (卓越性能) *</span><br></pre></td></tr></table></figure><h3 id="设置平衡"><a href="#设置平衡" class="headerlink" title="设置平衡"></a>设置平衡</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e</span><br></pre></td></tr></table></figure><h3 id="设置高性能"><a href="#设置高性能" class="headerlink" title="设置高性能"></a>设置高性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</span><br></pre></td></tr></table></figure><h3 id="设置卓越性能"><a href="#设置卓越性能" class="headerlink" title="设置卓越性能"></a>设置卓越性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 2a8f954d-051e-4a88-9659-b60b266fdcfe</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="EMQX-WSS-18084-8084"><a href="#EMQX-WSS-18084-8084" class="headerlink" title="EMQX-WSS 18084:8084"></a>EMQX-WSS 18084:8084</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HOST 18084端口代理容器8084端口，HOST 8084全部让给NGINX</span><br></pre></td></tr></table></figure><h3 id="NGINX-conf-d-emqx-wss-cluee-tech-conf"><a href="#NGINX-conf-d-emqx-wss-cluee-tech-conf" class="headerlink" title="NGINX-conf.d/emqx-wss.cluee.tech.conf"></a>NGINX-conf.d/emqx-wss.cluee.tech.conf</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 18084 ssl;</span><br><span class="line">    server_name cluee.tech;</span><br><span class="line"></span><br><span class="line">    ssl_certificate D:/App/SSL/certs/cluee/cluee.pem;</span><br><span class="line">    ssl_certificate_key D:/App/SSL/certs/cluee/private.key;</span><br><span class="line"></span><br><span class="line">    location /mqtt &#123;</span><br><span class="line">        proxy_pass http://emqx-wss.cluee.tech:8083/mqtt;</span><br><span class="line">        proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade <span class="variable">$http_upgrade</span>;</span><br><span class="line">        proxy_set_header Connection <span class="string">"upgrade"</span>;</span><br><span class="line">        proxy_read_timeout 600s;</span><br><span class="line">        proxy_set_header Host <span class="variable">$host</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="WSS验证"><a href="#WSS验证" class="headerlink" title="WSS验证"></a>WSS验证</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://unpkg.com/mqtt/dist/mqtt.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line"> </span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 将在全局初始化一个 mqtt 变量</span><br><span class="line">    //console.log(mqtt)</span><br><span class="line">    // 连接选项</span><br><span class="line">const options = &#123;</span><br><span class="line">      connectTimeout: 4000, // 超时时间</span><br><span class="line">      // 认证信息</span><br><span class="line">      clientId: <span class="string">'emqx-connect-via-webstest'</span>,</span><br><span class="line">      //username: <span class="string">''</span>,</span><br><span class="line">      //password: <span class="string">''</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//const client = mqtt.connect(<span class="string">'ws://cluee.tech:8083/mqtt'</span>, options)</span><br><span class="line">const client = mqtt.connect(<span class="string">'wss://cluee.tech:18084/mqtt'</span>, options)</span><br><span class="line"></span><br><span class="line">client.on(<span class="string">'connect'</span>, (e) =&gt; &#123;</span><br><span class="line">    console.log(<span class="string">'成功连接服务器'</span>)</span><br><span class="line">     </span><br><span class="line">    // 订阅一个主题</span><br><span class="line">    client.subscribe(<span class="string">'hello'</span>, &#123; qos: 1 &#125;, (error) =&gt; &#123;</span><br><span class="line">        <span class="keyword">if</span> (!error) &#123;</span><br><span class="line">            console.log(<span class="string">'订阅成功'</span>);</span><br><span class="line">            client.publish(<span class="string">'hello'</span>, <span class="string">'Hello EMQ'</span>, &#123; qos: 1, rein: <span class="literal">false</span> &#125;, (error) =&gt; &#123;</span><br><span class="line">                console.log(error || <span class="string">'发布成功'</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br><span class="line"> </span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;可用电源计划&quot;&gt;&lt;a href=&quot;#可用电源计划&quot; class=&quot;headerlink&quot; title=&quot;可用电源计划&quot;&gt;&lt;/a&gt;可用电源计划&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
+        &lt;h3 id=&quot;EMQX-WSS-18084-8084&quot;&gt;&lt;a href=&quot;#EMQX-WSS-18084-8084&quot; class=&quot;headerlink&quot; title=&quot;EMQX-WSS 18084:8084&quot;&gt;&lt;/a&gt;EMQX-WSS 18084:8084&lt;/h3&gt;&lt;figu
       
     
     </summary>
     
     
-      <category term="Windows" scheme="https://loft.cluee.tech/categories/Windows/"/>
+      <category term="EMQX" scheme="https://loft.cluee.tech/categories/EMQX/"/>
     
     
       <category term="SHELL" scheme="https://loft.cluee.tech/tags/SHELL/"/>
@@ -56,6 +56,32 @@
       
       
         &lt;h3 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://loft.cluee.tech/categories/Windows/"/>
+    
+    
+      <category term="SHELL" scheme="https://loft.cluee.tech/tags/SHELL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2408081050@电源计划</title>
+    <link href="https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/"/>
+    <id>https://loft.cluee.tech/2024/08/08/2408081050-%E7%94%B5%E6%BA%90%E8%AE%A1%E5%88%92/</id>
+    <published>2024-08-08T02:50:00.000Z</published>
+    <updated>2024-08-08T03:02:40.127Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="可用电源计划"><a href="#可用电源计划" class="headerlink" title="可用电源计划"></a>可用电源计划</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">powercfg -l</span><br><span class="line">电源方案 GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (平衡)</span><br><span class="line">电源方案 GUID: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (高性能)</span><br><span class="line">电源方案 GUID: 2a8f954d-051e-4a88-9659-b60b266fdcfe  (卓越性能) *</span><br></pre></td></tr></table></figure><h3 id="设置平衡"><a href="#设置平衡" class="headerlink" title="设置平衡"></a>设置平衡</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 381b4222-f694-41f0-9685-ff5bb260df2e</span><br></pre></td></tr></table></figure><h3 id="设置高性能"><a href="#设置高性能" class="headerlink" title="设置高性能"></a>设置高性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c</span><br></pre></td></tr></table></figure><h3 id="设置卓越性能"><a href="#设置卓越性能" class="headerlink" title="设置卓越性能"></a>设置卓越性能</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">powercfg -setactive 2a8f954d-051e-4a88-9659-b60b266fdcfe</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;可用电源计划&quot;&gt;&lt;a href=&quot;#可用电源计划&quot; class=&quot;headerlink&quot; title=&quot;可用电源计划&quot;&gt;&lt;/a&gt;可用电源计划&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutt
       
     
     </summary>
@@ -515,32 +541,6 @@
     
     
       <category term="PostgreSQL" scheme="https://loft.cluee.tech/tags/PostgreSQL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2006041800@K8S-切换namespace</title>
-    <link href="https://loft.cluee.tech/2020/06/04/2006041800-K8S-%E5%88%87%E6%8D%A2namespace/"/>
-    <id>https://loft.cluee.tech/2020/06/04/2006041800-K8S-%E5%88%87%E6%8D%A2namespace/</id>
-    <published>2020-06-04T09:52:26.000Z</published>
-    <updated>2022-05-26T02:50:13.094Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="namespaces：切换"><a href="#namespaces：切换" class="headerlink" title="namespaces：切换"></a>namespaces：切换</h1><p>要想快速切换到不同的命名空间，可以设置以下别名：</p><p><code>alias kcd=&#39;kubectl config set-context $(kubectl config current-context) --namespace&#39;</code></p><p>然后，可以使用</p><p><code>kcd some-namespace</code></p><p>在命名空间之间进行切换。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;namespaces：切换&quot;&gt;&lt;a href=&quot;#namespaces：切换&quot; class=&quot;headerlink&quot; title=&quot;namespaces：切换&quot;&gt;&lt;/a&gt;namespaces：切换&lt;/h1&gt;&lt;p&gt;要想快速切换到不同的命名空间，可以设置以下别名：&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="K8S" scheme="https://loft.cluee.tech/categories/K8S/"/>
-    
-    
-      <category term="配置" scheme="https://loft.cluee.tech/tags/%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
